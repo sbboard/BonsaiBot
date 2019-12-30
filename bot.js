@@ -17,7 +17,6 @@ client.on('message', msg => {
         channel.send('BONSAI!!')
     }
   }
-  console.log(msg)
 })
 
 client.login(secrets.token);
