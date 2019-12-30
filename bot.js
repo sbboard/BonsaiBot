@@ -2,6 +2,7 @@ const secrets = require("./secrets.js")
 const Discord = require('discord.js');
 const client = new Discord.Client();
 let anger = 0
+let hentai = 0
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -53,7 +54,18 @@ client.on('message', msg => {
       channel.send("YOU TYPO SHAMING ME, BRO??? I'M PISSED AS IS!!")
     }
   }
-
+  else if  (msg.content.toLowerCase().includes('hentai') && msg.author.username != "BonsaiBro") {
+    if(hentai % 5 == 0){
+      if(hentai % 10 == 0){
+        channel.send("we talkin' hentai??")
+      }
+      else{
+        channel.send("bro, i love it when we talk hentai in here. :)")
+        anger = 0
+      }
+      hentai ++
+    }
+  }
 })
 
 client.login(secrets.token);
