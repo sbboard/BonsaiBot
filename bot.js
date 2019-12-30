@@ -35,7 +35,6 @@ if (msg.content.toLowerCase().includes('bonsai') && msg.author.username != "Bons
   else{
     if(anger <= 5){
       channel.send('BONSAI! :)')
-      anger = anger-1
     }
     else{
       channel.send("I'M TOO MAD FOR THIS RIGHT NOW!! I GOTTA CHILL!! AAAAAAUGH!!")
