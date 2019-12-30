@@ -11,7 +11,7 @@ client.on('message', msg => {
   const channel = client.channels.find('name', msg.channel.name)
   if (msg.content.toLowerCase().includes('bonsai') && msg.author.username != "BonsaiBro") {
     if(msg.author.username.toLowerCase() == "hube"){    
-      if(anger == 0){channel.send('Haha oh Ted... you speak my word? How cute.')}
+      if(anger <= 0){channel.send('Haha oh Ted... you speak my word? How cute.')}
       else if(anger < 2){channel.send("Ted... how about you leave me be. I'm busy.")}
       else if(anger < 4){channel.send("TED. I SAID TO LEAVE ME ALONE.")}
       else {channel.send("I'M GOING TO SLAUGHTER YOU, TED!!")}
@@ -32,7 +32,7 @@ client.on('message', msg => {
             msg.content.toLowerCase().includes('bo​nsai') || 
             msg.content.toLowerCase().includes('bons‌‌ai')) 
             && msg.author.username != "BonsaiBro") {
-    if(anger == 0){channel.send('Clever trick. Trying to keep me from saying my word? He he. :)')}
+    if(anger <= 0){channel.send('Clever trick. Trying to keep me from saying my word? He he. :)')}
     else if(anger <= 2){channel.send("How about you know it off, pal?")}
     else if(anger <= 4){channel.send("YOU'RE TRYING TO KEEP MY WORD FROM ME??")}
     else {channel.send("I'M GOIN' APE! I'M RAGIN'!! LET ME SPEAK MY WORD!!!!")}
@@ -40,9 +40,9 @@ client.on('message', msg => {
   }
   else if ((msg.content.toLowerCase().includes('relax, my bro') || msg.content.toLowerCase().includes('relax my bro')) && msg.author.username != "BonsaiBro") {
     if(anger < 2){
-      channel.send("lol i'm not even mad bro.")
+      channel.send("lol i'm not even mad bro. :)")
     }
-    else{channel.send('Sorry i got heated, bro. i just love to speak my word so gosh darn much... :)')}
+    else{channel.send('sorry i got heated, bro. i just love to speak my word so gosh darn much... :)')}
     anger = 0
   }
   else if (msg.content.toLowerCase().includes('know it off') && msg.author.username != "BonsaiBro") {
@@ -58,13 +58,20 @@ client.on('message', msg => {
     if(hentai % 5 == 0){
       if(hentai % 10 == 0){
         channel.send("we talkin' hentai??")
+        anger = anger-1
       }
       else{
         channel.send("bro, i love it when we talk hentai in here. :)")
         anger = 0
       }
-      hentai ++
     }
+    hentai++
+  }
+  else if  (msg.content.toLowerCase().includes("bro u ok?") && msg.author.username != "BonsaiBro") {
+    channel.send(
+`anger lvl: ${anger}
+hentai interest: ${hentai}`
+)
   }
 })
 
