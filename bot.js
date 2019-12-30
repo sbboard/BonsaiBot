@@ -5,7 +5,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     
-  if (strpos(msg.content.toLowerCase()), 'bonsai') {
+  if (msg.content.toLowerCase().includes('bonsai')) {
     msg.reply('BONSAI!');
   }
 });
