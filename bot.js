@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 let anger = 0
 let hentai = 0
+let polycule = 0
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -92,11 +93,19 @@ else if  (msg.content.toLowerCase().includes('hentai') && msg.author.username !=
   hentai++
 }
 
+else if  (msg.content.toLowerCase().includes('polycule') && msg.author.username != "BonsaiBro") {
+  if(hentai % 3 == 0){
+    channel.send("polycule? sign me up!")
+  }
+  polycule++
+}
+
   //statcheck
 else if  (msg.content.toLowerCase().includes("bro u ok") && msg.author.username != "BonsaiBro") {
 channel.send(
 `anger lvl: ${anger}
-hentai interest: ${hentai}`
+hentai interest: ${hentai}
+polycule interest: ${polycule}`
 )}
 })
 
