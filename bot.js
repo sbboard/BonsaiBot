@@ -93,14 +93,15 @@ else if  (msg.content.toLowerCase().includes('hentai') && msg.author.username !=
   hentai++
 }
 
+//polycule interest
 else if  (msg.content.toLowerCase().includes('polycule') && msg.author.username != "BonsaiBro") {
-  if(hentai % 3 == 0){
+  if(polycule % 3 == 0){
     channel.send("polycule? sign me up!")
   }
   polycule++
 }
 
-  //statcheck
+//statcheck
 else if  (msg.content.toLowerCase().includes("bro u ok") && msg.author.username != "BonsaiBro") {
 channel.send(
 `anger lvl: ${anger}
