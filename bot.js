@@ -9,7 +9,6 @@ const client = new Discord.Client();
 //temporary conditions
 //////////////////////////////////////////////////////////////////
 let lastPing = 0
-let lastChannel = ""
 let lastPinger = ""
 let emojiSeek = false
 let jokeSeek = false
