@@ -1,6 +1,6 @@
 const bro =  {
     "friends":[],
-    "emoji":":monkey_face:",
+    "emoji":":)",
     "stats":{
         "bonsai":{
             "amt": 0,

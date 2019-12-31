@@ -74,11 +74,10 @@ function getEnemy(){
 //on message recieve
 //////////////////////////////////////////////////////////////////
 client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
-
+  let killSwitch = false
   lastPing++
   const channel = client.channels.find('name', msg.channel.name)
   const sender = msg.author.username.toLowerCase()
-  console.log(msg.content)
 ///////////////////////////////////////////////////////////////
 //new to bonsai
 //////////////////////////////////////////////////////////////////
@@ -136,7 +135,6 @@ if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<
 ///////////////////////////////////////////////////////////////
 //constant replies
 //////////////////////////////////////////////////////////////////
-let killSwitch = false
 for(let i=0;i<input.constants.length;i++){
    for(let j=0;j<input.constants[i].keywords.length;j++){
      if(msg.content.toLowerCase().includes(input.constants[i].keywords[j])&& killSwitch == false){
@@ -145,6 +143,20 @@ for(let i=0;i<input.constants.length;i++){
      }
     }
   }
+
+///////////////////////////////////////////////////////////////
+//random replies
+//////////////////////////////////////////////////////////////////
+if(killSwitch == false){
+for(let i=0;i<input.random.length;i++){
+  if(msg.content.toLowerCase().includes(input.random[i])){
+    if(getRandom(5) == 3){
+      postMsg(input.random[i],sender,channel)
+      killSwitch = true
+    }
+  }
+}
+}
 }})
 
 ///////////////////////////////////////////////////////////////
@@ -189,12 +201,15 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
   else{
   channel.send(translateMsg(respo[keyword][relationship][msgIndex],postSender))
   }
+  //status changes
   if(respo[keyword].statChange.length > 0){
     if(respo[keyword].statChange[0] == "increase"){
       increaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
     }
     else if(respo[keyword].statChange[0] == "decrease"){
+      if(relationship != "enemy"){
       decreaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
+      }
     }
     else{
       if(relationship != "enemy"){
