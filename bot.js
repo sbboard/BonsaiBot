@@ -55,7 +55,7 @@ function decreaseFriend(friend,amt,lastChannel){
   let buddy = bonsaiBot.friends.find(o => o.name == friend)
   buddy.friendLvl = buddy.friendLvl - amt
   if(bonsaiBot.currentEnemy != getEnemy()){
-    //lastChannel.send(`hey ${getEnemy().toLowerCase()} i've been thinking and i'm kinda pissed at you ngl lol ${bonsaiBot.emoji}`)
+    lastChannel.send(`hey ${getEnemy().toLowerCase()} i've been thinking and i'm kinda pissed at you ngl lol ${bonsaiBot.emoji}`)
     bonsaiBot.currentEnemy = getEnemy().toLowerCase()
   }
 }
