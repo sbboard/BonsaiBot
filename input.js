@@ -39,8 +39,8 @@ const input =  {
     "silent":{
         "faithPromote":["god","jesus","married","bible","pray"],
         "sinPromote":["drug","sex","porn"],
-        "likes":["candy","kiss","wow","yeah","love","thank","cool"],
-        "hates":["gun","no","fuck","fake","furry","hate"],
+        "likes":["candy","kiss","wow","yeah","love","thank","cool","sorry","nice"],
+        "hates":["gun","no","fuck","fake","furry","hate","bad"],
     },
     "random":["lol","bot","bon","bitch","hentai","polycule"]
 }
