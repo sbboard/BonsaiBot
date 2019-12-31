@@ -55,30 +55,12 @@ const respo =  {
         "statChange":["increase","bonsai",1]
     },
     "relaxCmd":{
-        "bff":[`bro you think i'm mad? i'm not mad! lol EMOJIHERE`,`bro i lost my cool and i have to apologize. but i'm chill now. EMOJIHERE`],
-        "norm":[`lol i'm not even mad bro. EMOJIHERE`,`sorry i got heated, bro. now i'm chill tho.EMOJIHERE`],
+        "bff":[`bro you think i'm mad? i'm not mad! lol EMOJIHERE`,`bro i lost my cool and i have to apologize. always remember who your real friends are EMOJIHERE`],
+        "norm":[`lol i'm not even mad bro. EMOJIHERE`,`sorry i got heated, bro. now i'm chill tho. EMOJIHERE`],
         "enemy":[`lol don't ever tell me what to do, NAMEHERE.`,"EXCUSE ME?? HOW ABOUT YOU RELAX!"],
         "statChange":["reset","anger",0]
     },
-    "hateCmd":{
-        "bff":[],
-        "norm":[],
-        "enemy":[],
-        "statChange":[]
-    },
-    "likeCmd":{
-        "bff":[],
-        "norm":[],
-        "enemy":[],
-        "statChange":[]
-    },
-    "friendCmd":{
-        "bff":[],
-        "norm":[],
-        "enemy":[],
-        "statChange":[]
-    },
-    "enemyCmd":{
+    "sorry":{
         "bff":[],
         "norm":[],
         "enemy":[],
@@ -87,7 +69,13 @@ const respo =  {
     "vibeCmd":{
         "bff":[],
         "norm":[],
-        "enemy":["like i'd tell you, narc bro","YOU DON'T CARE HOW I FEEL!!"],
+        "enemy":["like i'd tell you, narc bro","YOU DON'T CARE HOW I FEEL BRO"],
+        "statChange":[]
+    },
+    "friendChk":{
+        "bff":[],
+        "norm":[],
+        "enemy":["i'll never tell you bro","I'M PISSED BRO"],
         "statChange":[]
     },
     "goodnight":{
@@ -97,7 +85,7 @@ const respo =  {
     'NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE'],
         "enemy":["don't wet the bed tonight idiot lol",
     "I'M GONNA YELL REALLY LOUD SO YOU CAN'T GET ANY SLEEP LOL AAAAAAAAAAAAAAAAAAAAAH"],
-        "statChange":[]
+        "statChange":["decrease","anger",1]
     },
     "typos":{
         "bff":['really bums me out my bff would typo shame me...','YOU TOO? I THOUGHT YOU WERE MY BEST BRO!'],
@@ -126,7 +114,7 @@ const respo =  {
     "bon":{
         "bff":['lol bro you almost did a bonsai there lol EMOJIHERE',
     'BONSAI OR DIE BRO'],
-        "norm":['BONSA-- oh wait nevermind.',
+        "norm":['BONSA-- oh oops sorry bro got ahead of myself lol',
     'YOU CAME PRETTY CLOSE TO DOING A BONSAI BUT YOU CHICKENED OUT LIKE A COWARD!!'],
         "enemy":[`NAMEHERE i know you didn't say my word... but you almost did. watch yourself.`,
     `YOU'RE COMING A LITTLE CLOSE TO SAYING MY WORD THERE BRO`],
@@ -139,7 +127,7 @@ const respo =  {
     `I'M GONNA PUT YOU IN A FULL NELSON BRO`],
         "enemy":[`typical NAMEHERE, using the bad b-word instead of the good one EMOJIHERE`,
     `hey NAMEHERE, trying not to embarass yourself lol jk`],
-        "statChange":[]
+        "statChange":["increase","anger",1]
     },
     "hentai":{
         "bff":[`bro your opinion on hentai is so nuanced`,
@@ -158,12 +146,6 @@ const respo =  {
         "enemy":[`aha NAMEHERE is notorious for their polycule of one EMOJIHERE`,
     `GONNA BONSAI BLAST MY FIST THROUGH YOUR HUMAN CENTIPEDE OF A POLYCULE BRO`],
         "statChange":['decrease','anger',1]
-    },
-    "enemyCmd":{
-        "bff":[],
-        "norm":[],
-        "enemy":[],
-        "statChange":[]
     },
 }
 

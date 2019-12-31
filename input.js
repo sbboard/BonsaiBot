@@ -1,6 +1,14 @@
 const input =  {
     "constants":[
         {
+            "name":"sorry",
+            "keywords":["sorry bro","bro i'm sorry","sorry bonsai bro"]
+        },
+        {
+            "name":"goodnight",
+            "keywords":["goodnight"]
+        },
+        {
             "name":"namecall",
             "keywords":["bonsai bro","bonsaibro"]
         },
@@ -21,22 +29,18 @@ const input =  {
             "keywords":["know it off"]
         },
         {
-            "name":"goodnight",
-            "keywords":["goodnight"]
+            "name":"friendChk",
+            "keywords":["who are your real bros"]
         },
-        //"hateCmd":["bro what do you dislike","bro what do you hate"],
-        //"likeCmd":["bro what do you like","bro what do you love"],
-        //"friendCmd":["bro who is your best bro"],
-        //"enemyCmd":["bro who is your biggest foe"],
         {"name":"vibeCmd",
         "keywords":["vibe check"]},
         //"knockKnock":["knock knock"],
         ],
     "silent":{
         "faithPromote":["god","jesus","married","bible","pray"],
-        "sinPromote":["game","drug","sex","porn","swear"],
-        "likes":["candy","kiss","wow","yeah"],
-        "hates":["gun","no","fuck","fake","furry"],
+        "sinPromote":["drug","sex","porn"],
+        "likes":["candy","kiss","wow","yeah","love","thank","cool"],
+        "hates":["gun","no","fuck","fake","furry","hate"],
     },
     "random":["lol","bot","bon","bitch","hentai","polycule"]
 }

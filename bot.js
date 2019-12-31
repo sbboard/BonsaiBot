@@ -92,7 +92,7 @@ client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
 ///////////////////////////////////////////////////////////////
 //emoji seek check
 //////////////////////////////////////////////////////////////////
-if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<:") > -1 || msg.content.match(/\ud83c[\udf00-\udfff]|\ud83d[\udc00-\ude4f]|\ud83d[\ude80-\udeff]/g).length > 0)){
+if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<:") > -1 || msg.content.match(/\ud83c[\udf00-\udfff]|\ud83d[\udc00-\ude4f]|\ud83d[\ude80-\udeff]/g) != null)){
   if(msg.content.indexOf("<:") > -1){
     let cutOne = msg.content.indexOf("<:")
     let cutTwo = msg.content.indexOf(">") + 1
@@ -132,9 +132,12 @@ if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<
     }
   }}
   
+
+
 ///////////////////////////////////////////////////////////////
 //constant replies
 //////////////////////////////////////////////////////////////////
+if(killSwitch == false){
 for(let i=0;i<input.constants.length;i++){
    for(let j=0;j<input.constants[i].keywords.length;j++){
      if(msg.content.toLowerCase().includes(input.constants[i].keywords[j])&& killSwitch == false){
@@ -142,21 +145,22 @@ for(let i=0;i<input.constants.length;i++){
       killSwitch = true
      }
     }
-  }
+}}
 
 ///////////////////////////////////////////////////////////////
 //random replies
 //////////////////////////////////////////////////////////////////
 if(killSwitch == false){
-for(let i=0;i<input.random.length;i++){
-  if(msg.content.toLowerCase().includes(input.random[i])){
-    if(getRandom(5) == 3){
-      postMsg(input.random[i],sender,channel)
-      killSwitch = true
+  for(let i=0;i<input.random.length;i++){
+    if(msg.content.toLowerCase().includes(input.random[i])){
+      if(getRandom(5) == 3){
+        postMsg(input.random[i],sender,channel)
+        killSwitch = true
+      }
     }
   }
-}
-}
+  }
+
 }})
 
 ///////////////////////////////////////////////////////////////
@@ -196,6 +200,29 @@ function postMsg(keyword,postSender,channel){
 faith: ${bonsaiBot.stats.faith.amt}
 bonsai: ${bonsaiBot.stats.bonsai.amt}`
         )
+    }
+  }
+  else if(keyword == "friendChk"){
+    if(relationship == "enemy"){
+      channel.send(respo[keyword][relationship][msgIndex])
+    }
+    else{
+      let friendsList = ``
+      for(let z=0;z<bonsaiBot.friends.length;z++){
+        friendsList += `${bonsaiBot.friends[z].name}: ${bonsaiBot.friends[z].friendLvl}
+        `
+      }
+      channel.send(friendsList)
+    }
+  }
+  else if(keyword == "sorry"){
+    let buddy = bonsaiBot.friends.find(o => o.name == postSender)
+    if(buddy.friendLvl >= 0){
+      channel.send(`no need to apologize bro we're just living the bonsai lifestyle lol`)
+    }
+    else{
+      channel.send(`real talk? i was hopig you would apologize... this means a lot to me bro, but not in a weird way lol ${bonsaiBot.emoji}`)
+      increaseFriend(postSender,5,channel)
     }
   }
   else{
