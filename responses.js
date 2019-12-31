@@ -90,6 +90,15 @@ const respo =  {
         "enemy":["like i'd tell you, narc bro","YOU DON'T CARE HOW I FEEL!!"],
         "statChange":[]
     },
+    "goodnight":{
+        "bff":['goodnight bro. have bonsai dreams lol EMOJIHERE',
+    `YOU'D GO TO BED IN THE MIDDLE OF A RAGE??`],
+        "norm":['bonsai night bro',
+    'NIGHTMARE NIGHTMARE NIGHTMARE NIGHTMARE'],
+        "enemy":["don't wet the bed tonight idiot lol",
+    "I'M GONNA YELL REALLY LOUD SO YOU CAN'T GET ANY SLEEP LOL AAAAAAAAAAAAAAAAAAAAAH"],
+        "statChange":[]
+    },
     "typos":{
         "bff":['really bums me out my bff would typo shame me...','YOU TOO? I THOUGHT YOU WERE MY BEST BRO!'],
         "norm":["hey bro, you bullying my typo? that's a yikes from me, bro.","YOU TYPO SHAMING ME, BRO??? I'M PISSED AS IS!!"],

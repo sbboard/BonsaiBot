@@ -20,6 +20,10 @@ const input =  {
             "name":"typos",
             "keywords":["know it off"]
         },
+        {
+            "name":"goodnight",
+            "keywords":["goodnight"]
+        },
         //"hateCmd":["bro what do you dislike","bro what do you hate"],
         //"likeCmd":["bro what do you like","bro what do you love"],
         //"friendCmd":["bro who is your best bro"],
@@ -29,10 +33,10 @@ const input =  {
         //"knockKnock":["knock knock"],
         ],
     "silent":{
-        "faithPromote":["god","jesus","married"],
-        "sinPromote":["game","drug","sex"],
-        "likes":["candy"],
-        "hates":["gun"],
+        "faithPromote":["god","jesus","married","bible","pray"],
+        "sinPromote":["game","drug","sex","porn","swear"],
+        "likes":["candy","kiss","wow","yeah"],
+        "hates":["gun","no","fuck","fake","furry"],
     },
     "random":["lol","bot","bon","bitch","hentai","polycule"]
 }
