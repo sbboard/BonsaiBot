@@ -271,8 +271,9 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
     else{
       let friendsList = ``
       for(let z=0;z<bonsaiBot.friends.length;z++){
-        friendsList += `${bonsaiBot.friends[z].name}: ${bonsaiBot.friends[z].friendLvl}
-        `
+        friendsList += 
+`${bonsaiBot.friends[z].name}: ${bonsaiBot.friends[z].friendLvl}
+`
       }
       channel.send(friendsList)
     }
@@ -298,7 +299,7 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
         decreaseFriend(postSender,1,channel)
       }
       else{
-        increaseFriend(postSender,1,channel)
+        increaseFriend(postSender,2,channel)
       }
     }
     else if(respo[keyword].statChange[0] == "decrease"){
@@ -315,7 +316,7 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
     }
   }
   if(relationship == "enemy"){
-    increaseStat("anger",1)
+    //increaseStat("anger",1)
   }
 }
 
