@@ -232,15 +232,23 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
   if(respo[keyword].statChange.length > 0){
     if(respo[keyword].statChange[0] == "increase"){
       increaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
+      if(respo[keyword].statChange[1] != "bonsai"){
+        decreaseFriend(postSender,1,channel)
+      }
+      else{
+        increaseFriend(postSender,1,channel)
+      }
     }
     else if(respo[keyword].statChange[0] == "decrease"){
       if(relationship != "enemy"){
-      decreaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
+        decreaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
       }
+      increaseFriend(postSender,1,channel)
     }
     else{
       if(relationship != "enemy"){
         resetStat(respo[keyword].statChange[1])
+        increaseFriend(postSender,1,channel)
       }
     }
   }
