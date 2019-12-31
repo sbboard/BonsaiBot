@@ -5,6 +5,10 @@ const input =  {
             "keywords":["sorry bro","bro i'm sorry","sorry bonsai bro"]
         },
         {
+            "name":"relationship",
+            "keywords":["bro i need relationship advice"]
+        },
+        {
             "name":"goodnight",
             "keywords":["goodnight"]
         },
@@ -26,7 +30,7 @@ const input =  {
         },
         {
             "name":"typos",
-            "keywords":["know it off"]
+            "keywords":["know it off","hopig"]
         },
         {
             "name":"friendChk",
@@ -37,12 +41,12 @@ const input =  {
         //"knockKnock":["knock knock"],
         ],
     "silent":{
-        "faithPromote":["god","jesus","married","bible","pray"],
-        "sinPromote":["drug","sex","porn"],
+        "faithPromote":["god","jesus","married","bible","pray","energy","christ"],
+        "sinPromote":["drug","sex","porn","weed","youtube"],
         "likes":["candy","kiss","wow","yeah","love","thank","cool","sorry","nice"],
         "hates":["gun","no","fuck","fake","furry","hate","bad"],
     },
-    "random":["lol","bot","bon","bitch","hentai","polycule"]
+    "random":["lol","bot","bon","bitch","hentai","polycule","lunch"]
 }
 
 module.exports = input

@@ -100,7 +100,7 @@ const respo =  {
     'GONNA LAUGH WHEN I PUNCH YOU IN THE HEAD BRO'],
         "enemy":['NAMEHERE sure has a good sense of humor jk',
     'LOL? WHAT DOES THAT STAND FOR? LORD OF LOSERS??'],
-        "statChange":["decrease","anger",1]
+        "statChange":[]
     },
     "bot":{
         "bff":[`bro... you're my bff that's why I gotta ask... what's a bot?`,
@@ -118,6 +118,24 @@ const respo =  {
     'YOU CAME PRETTY CLOSE TO DOING A BONSAI BUT YOU CHICKENED OUT LIKE A COWARD!!'],
         "enemy":[`NAMEHERE i know you didn't say my word... but you almost did. watch yourself.`,
     `YOU'RE COMING A LITTLE CLOSE TO SAYING MY WORD THERE BRO`],
+        "statChange":[]
+    },
+    "lunch":{
+        "bff":['hey bro are we still getting sushi for lunch? love spending time with you lol EMOJIHERE',
+    'BRO LUNCH SOUNDS GREAT BUT I AM TOO PISSED TO EAT RN'],
+        "norm":['did someone say lunch? lol how about a sandwich or something',
+    `LUNCH?? I'M TOO MAD TO EVEN THINK OF EATING!`],
+        "enemy":[`i'd rather starve then get lunch with you bro`,
+    `AAAAAAAAAAAAAAAAAAAAAAAH AAAAAAAAAAAAAAAAAAAAAH AAAAAAAAAAAAAAAAAAAAH I'M FURIOUS! I'M MAD!`],
+        "statChange":[]
+    },
+    "relationship":{
+        "bff":[`hey, i get it bro. i've been there. but you're a great bro that lives a bonsai life. follow your heart and you'll find peace. EMOJIHERE`,
+    `bro i'm kinda pissed rn lol. i could use some advice myself. i can't help but want to rage when i get like this. i wanna punch a wall of something lol.`],
+        "norm":[`you're overthinking it bro! just be real and open with yourself lol EMOJIHERE`,
+    `FORGET ABOUT IT!`],
+        "enemy":[`a bro like you, NAMEHERE? lol you're gonna die alone bro`,
+    `BRO YOU WANT RELATIONSHIP ADVICE? HOW ABOUT YOU BACK THE BONSAI UP`],
         "statChange":[]
     },
     "bitch":{
@@ -145,7 +163,7 @@ const respo =  {
     `I'M SO MAD I COULD WEDGIE EVERY MEMBER OF MY POLYCULE`],
         "enemy":[`aha NAMEHERE is notorious for their polycule of one EMOJIHERE`,
     `GONNA BONSAI BLAST MY FIST THROUGH YOUR HUMAN CENTIPEDE OF A POLYCULE BRO`],
-        "statChange":['decrease','anger',1]
+        "statChange":[]
     },
 }
 
