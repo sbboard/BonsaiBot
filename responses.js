@@ -1,5 +1,5 @@
 const respo =  {
-    "name":{
+    "namecall":{
         "bff":[
             `bro when you say my name it sounds like music lol. EMOJIHERE`,
             `bonsai bro right here lol shoutout to my bff NAMEHERE love you bro EMOJIHERE`,
@@ -87,7 +87,7 @@ const respo =  {
     "vibeCmd":{
         "bff":[],
         "norm":[],
-        "enemy":[],
+        "enemy":["like i'd tell you, narc bro","YOU DON'T CARE HOW I FEEL!!"],
         "statChange":[]
     },
     "lolChk":{

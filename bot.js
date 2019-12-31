@@ -42,16 +42,17 @@ function resetStat(statName){
   bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].default
 }
 
-function increaseFriend(friend,amt){
+function increaseFriend(friend,amt,lastChannel){
   let buddy = bonsaiBot.friends.find(o => o.name == friend)
   buddy.friendLvl = buddy.friendLvl + amt
   if(bonsaiBot.currentBF != getBestFriend()){
-    //lastChannel.send(`lol ${getBestFriend().toLowerCase()} you're my new bff bro. bonsai to that! ${bonsaiBot.emoji}`)
     bonsaiBot.currentBF = getBestFriend().toLowerCase()
+    lastChannel.send(`${bonsaiBot.currentBF} bro i really admire you. what emoji do you like the most?`)
+    emojiSeek = true
   }
 }
 
-function decreaseFriend(friend,amt){
+function decreaseFriend(friend,amt,lastChannel){
   let buddy = bonsaiBot.friends.find(o => o.name == friend)
   buddy.friendLvl = buddy.friendLvl - amt
   if(bonsaiBot.currentEnemy != getEnemy()){
@@ -70,15 +71,15 @@ function getEnemy(){
   return sortedFriends[0].name
 }
 
-
 ///////////////////////////////////////////////////////////////
 //on message recieve
 //////////////////////////////////////////////////////////////////
 client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
+
   lastPing++
   const channel = client.channels.find('name', msg.channel.name)
   const sender = msg.author.username.toLowerCase()
-
+  console.log(msg.content)
 ///////////////////////////////////////////////////////////////
 //new to bonsai
 //////////////////////////////////////////////////////////////////
@@ -90,17 +91,33 @@ client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
     //channel.send(`hey ${sender.toLowerCase()} i'm your bonsai bro lol. say bonsai some time, kay? ${bonsaiBot.emoji}`)
     bonsaiBot.friends.push(newFriend)
   }
+///////////////////////////////////////////////////////////////
+//emoji seek check
+//////////////////////////////////////////////////////////////////
+if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<:") > -1 || msg.content.match(/\ud83c[\udf00-\udfff]|\ud83d[\udc00-\ude4f]|\ud83d[\ude80-\udeff]/g).length > 0)){
+  if(msg.content.indexOf("<:") > -1){
+    let cutOne = msg.content.indexOf("<:")
+    let cutTwo = msg.content.indexOf(">") + 1
+    let cutEmoji = msg.content.substring(cutOne,cutTwo);
+    bonsaiBot.emoji = cutEmoji
+  }
+  else{
+    bonsaiBot.emoji = msg.content.match(/\ud83c[\udf00-\udfff]|\ud83d[\udc00-\ude4f]|\ud83d[\ude80-\udeff]/g)[0]
+  }
+  channel.send(`great emoji choice, bro. ${bonsaiBot.emoji} is my new fave emoji. bonsai to that lol`)
+  emojiSeek = false
+}
 
 ///////////////////////////////////////////////////////////////
 //silent stat changers
 //////////////////////////////////////////////////////////////////
   //check for hate
   for(let i = 0; i < input.silent.hates.length; i++){if(msg.content.toLowerCase().includes(input.silent.hates[i])){
-    decreaseFriend(sender,1)
+    decreaseFriend(sender,1,channel)
   }}
   //check for like
   for(let i = 0; i < input.silent.likes.length; i++){if(msg.content.toLowerCase().includes(input.silent.likes[i])){
-    increaseFriend(sender,1)
+    increaseFriend(sender,1,channel)
   }}
   //check for sin
   for(let i = 0; i < input.silent.sinPromote.length; i++){if(msg.content.toLowerCase().includes(input.silent.sinPromote[i])){
@@ -120,11 +137,12 @@ client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
 ///////////////////////////////////////////////////////////////
 //constant replies
 //////////////////////////////////////////////////////////////////
+let killSwitch = false
 for(let i=0;i<input.constants.length;i++){
    for(let j=0;j<input.constants[i].keywords.length;j++){
-     if(msg.content.toLowerCase().includes(input.constants[i].keywords[j])){
+     if(msg.content.toLowerCase().includes(input.constants[i].keywords[j])&& killSwitch == false){
       postMsg(input.constants[i].name,sender,channel)
-      break
+      killSwitch = true
      }
     }
   }
@@ -141,13 +159,12 @@ function postMsg(keyword,postSender,channel){
   }
   else if(postSender == bonsaiBot.currentEnemy){
     relationship = "enemy"
-    increaseStat("anger",1)
   }
   else{
     relationship = "norm"
   }
   if(respo[keyword][relationship].length != 5){
-    if(bonsaiBot.stats.anger >= 4){
+    if(bonsaiBot.stats.anger.amt >= 3){
       msgIndex = 1
     }
     else{
@@ -157,7 +174,22 @@ function postMsg(keyword,postSender,channel){
   else{
     msgIndex = bonsaiBot.stats.anger.amt
   }
+
+  if(keyword == "vibeCmd"){
+    if(relationship == "enemy"){
+      channel.send(respo[keyword][relationship][msgIndex])
+    }
+    else{
+      channel.send(
+        `anger: ${bonsaiBot.stats.anger.amt}
+faith: ${bonsaiBot.stats.faith.amt}
+bonsai: ${bonsaiBot.stats.bonsai.amt}`
+        )
+    }
+  }
+  else{
   channel.send(translateMsg(respo[keyword][relationship][msgIndex],postSender))
+  }
   if(respo[keyword].statChange.length > 0){
     if(respo[keyword].statChange[0] == "increase"){
       increaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
@@ -170,6 +202,9 @@ function postMsg(keyword,postSender,channel){
         resetStat(respo[keyword].statChange[1])
       }
     }
+  }
+  if(relationship == "enemy"){
+    increaseStat("anger",1)
   }
 }
 

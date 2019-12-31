@@ -19,12 +19,13 @@ const input =  {
         {
             "name":"typos",
             "keywords":["know it off"]
-        }
+        },
         //"hateCmd":["bro what do you dislike","bro what do you hate"],
         //"likeCmd":["bro what do you like","bro what do you love"],
         //"friendCmd":["bro who is your best bro"],
         //"enemyCmd":["bro who is your biggest foe"],
-        //"vibeCmd":["vibe check"],
+        {"name":"vibeCmd",
+        "keywords":["vibe check"]},
         //"knockKnock":["knock knock"],
         ],
     "silent":{
