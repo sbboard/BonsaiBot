@@ -60,6 +60,12 @@ const respo =  {
         "enemy":[`lol don't ever tell me what to do, NAMEHERE.`,"EXCUSE ME?? HOW ABOUT YOU RELAX!"],
         "statChange":["reset","anger",0]
     },
+    "thanks":{
+        "bff":['for you bro? anything EMOJIHERE','EVEN IN MY RAGE I WOULD DO ANYTHING FOR YOU BRO'],
+        "norm":['np bro. bonsai up EMOJIHERE','AAAAAH AH AH AH UR WELCOME I GUESS BRO'],
+        "enemy":[`lol don't thank me scrub i didn't do nothing for you lol`,'THANK THESE HANDS BRO'],
+        "statChange":['decrease','anger',1]
+    },
     "sorry":{
         "bff":[],
         "norm":[],
@@ -164,6 +170,12 @@ const respo =  {
         "enemy":[`aha NAMEHERE is notorious for their polycule of one EMOJIHERE`,
     `GONNA BONSAI BLAST MY FIST THROUGH YOUR HUMAN CENTIPEDE OF A POLYCULE BRO`],
         "statChange":[]
+    },
+    "wtf":{
+        "bff":['what the friendship (cuz we besties) lol bonsai','WHAT THE AAAAAAAAAAH'],
+        "norm":['wtf ya lol','WHY THE FROWN? CUZ I AM MAD!'],
+        "enemy":['wtf...',`btw i'm pissed`],
+        "statChange":['increase','anger',1]
     },
 }
 

@@ -25,6 +25,10 @@ const input =  {
             "keywords":["bonsai"]
         },
         {
+            "name":"thanks",
+            "keywords":["thanks bro","thank you bro","bro thank you"]
+        },
+        {
             "name":"relaxCmd",
             "keywords":["relax, my bro","relax my bro"]
         },
@@ -46,7 +50,7 @@ const input =  {
         "likes":["candy","kiss","wow","yeah","love","thank","cool","sorry","nice"],
         "hates":["gun","no","fuck","fake","furry","hate","bad"],
     },
-    "random":["lol","bot","bon","bitch","hentai","polycule","lunch"]
+    "random":["lol","bot","bon","bitch","hentai","polycule","lunch","wtf"]
 }
 
 module.exports = input
