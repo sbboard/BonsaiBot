@@ -1,113 +1,183 @@
 const secrets = require("./secrets.js")
+const bonsaiBot = require("./brain.js")
+const input = require("./input.js")
+const respo = require("./responses.js")
 const Discord = require('discord.js');
 const client = new Discord.Client();
-let anger = 0
-let hentai = 0
-let polycule = 0
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-})
-client.on('message', msg => {
-const channel = client.channels.find('name', msg.channel.name)
+///////////////////////////////////////////////////////////////
+//temporary conditions
+//////////////////////////////////////////////////////////////////
+let lastPing = 0
+let lastChannel = ""
+let lastPinger = ""
+let emojiSeek = false
+let jokeSeek = false
+let stumbling = false
 
-//if bonsai is spoken
-if (msg.content.toLowerCase().includes('bonsai') && msg.author.username != "BonsaiBro") {
-  //check for Ted
-  if(msg.author.username.toLowerCase() == "hube"){    
-    if(anger <= 0){channel.send("haha oh ted... you speak my word? that's funny.")}
-    else if(anger == 1){channel.send("ted... how about you leave me be. I'm busy.")}
-    else if(anger == 2){channel.send("buzz off ted!")}
-    else if(anger == 3){channel.send("don't say my word ted. don't!")}
-    else if(anger == 4){channel.send("TED. I SAID TO LEAVE ME ALONE.")}
-    else {channel.send("I'M GOING TO SLAUGHTER YOU, TED!!")}
-    anger++    
-  } 
-  //check for name
-  else if(msg.content.toLowerCase().includes('bonsai bro') && msg.author.username != "BonsaiBro") {
-    if(anger < 5){
-      channel.send("that's the name bro, don't wear it out lol. :)")
+///////////////////////////////////////////////////////////////
+//functions
+//////////////////////////////////////////////////////////////////
+function saveProg(){
+
+}
+
+function getRandom(max){
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+function increaseStat(statName,chng){
+  if(bonsaiBot.stats[statName].amt < bonsaiBot.stats[statName].max){
+    bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].amt + chng
+  }
+}
+
+function decreaseStat(statName,chng){
+  if(bonsaiBot.stats[statName].amt > 0){
+    bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].amt - chng
+  }
+}
+
+function resetStat(statName){
+  bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].default
+}
+
+function increaseFriend(friend,amt){
+  let buddy = bonsaiBot.friends.find(o => o.name == friend)
+  buddy.friendLvl = buddy.friendLvl + amt
+  if(bonsaiBot.currentBF != getBestFriend()){
+    //lastChannel.send(`lol ${getBestFriend().toLowerCase()} you're my new bff bro. bonsai to that! ${bonsaiBot.emoji}`)
+    bonsaiBot.currentBF = getBestFriend().toLowerCase()
+  }
+}
+
+function decreaseFriend(friend,amt){
+  let buddy = bonsaiBot.friends.find(o => o.name == friend)
+  buddy.friendLvl = buddy.friendLvl - amt
+  if(bonsaiBot.currentEnemy != getEnemy()){
+    //lastChannel.send(`hey ${getEnemy().toLowerCase()} i've been thinking and i'm kinda pissed at you ngl lol ${bonsaiBot.emoji}`)
+    bonsaiBot.currentEnemy = getEnemy().toLowerCase()
+  }
+}
+
+function getBestFriend(){
+  let sortedFriends = bonsaiBot.friends.sort((a, b) => (a.friendLvl < b.friendLvl) ? 1 : -1)
+  return sortedFriends[0].name
+}
+
+function getEnemy(){
+  let sortedFriends = bonsaiBot.friends.sort((a, b) => (a.friendLvl > b.friendLvl) ? 1 : -1)
+  return sortedFriends[0].name
+}
+
+
+///////////////////////////////////////////////////////////////
+//on message recieve
+//////////////////////////////////////////////////////////////////
+client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
+  lastPing++
+  const channel = client.channels.find('name', msg.channel.name)
+  const sender = msg.author.username.toLowerCase()
+
+///////////////////////////////////////////////////////////////
+//new to bonsai
+//////////////////////////////////////////////////////////////////
+  if(typeof bonsaiBot.friends.find(o => o.name == sender) == "undefined"){
+    let newFriend = {
+      "name":sender,
+      "friendLvl":0,
     }
-    else{
-      channel.send("DON'T EVEN SAY MY NAME, BRO. I'M PISSED!")
+    //channel.send(`hey ${sender.toLowerCase()} i'm your bonsai bro lol. say bonsai some time, kay? ${bonsaiBot.emoji}`)
+    bonsaiBot.friends.push(newFriend)
+  }
+
+///////////////////////////////////////////////////////////////
+//silent stat changers
+//////////////////////////////////////////////////////////////////
+  //check for hate
+  for(let i = 0; i < input.silent.hates.length; i++){if(msg.content.toLowerCase().includes(input.silent.hates[i])){
+    decreaseFriend(sender,1)
+  }}
+  //check for like
+  for(let i = 0; i < input.silent.likes.length; i++){if(msg.content.toLowerCase().includes(input.silent.likes[i])){
+    increaseFriend(sender,1)
+  }}
+  //check for sin
+  for(let i = 0; i < input.silent.sinPromote.length; i++){if(msg.content.toLowerCase().includes(input.silent.sinPromote[i])){
+    decreaseStat("faith",1)
+    if(bonsaiBot.stats.faith.amt == 25){
+      channel.send(`${input.silent.sinPromote[i]}s? what is a ${input.silent.sinPromote[i]}, bro? real question not playing lol`)
     }
-  } 
-  //check anger
+  }}
+  //check for moral
+  for(let i = 0; i < input.silent.faithPromote.length; i++){if(msg.content.toLowerCase().includes(input.silent.faithPromote[i])){
+    increaseStat("faith",1)
+    if(bonsaiBot.stats.faith.amt == 75){
+      channel.send(`${input.silent.faithPromote[i]}? i'm feelin the holy spirit rn bro. ${bonsaiBot.emoji}`)
+    }
+  }}
+  
+///////////////////////////////////////////////////////////////
+//constant replies
+//////////////////////////////////////////////////////////////////
+for(let i=0;i<input.constants.length;i++){
+   for(let j=0;j<input.constants[i].keywords.length;j++){
+     if(msg.content.toLowerCase().includes(input.constants[i].keywords[j])){
+      postMsg(input.constants[i].name,sender,channel)
+      break
+     }
+    }
+  }
+}})
+
+///////////////////////////////////////////////////////////////
+//post constant msg
+//////////////////////////////////////////////////////////////////
+function postMsg(keyword,postSender,channel){
+  let relationship = ""
+  let msgIndex = 0
+  if(postSender == bonsaiBot.currentBF){
+    relationship = "bff"
+  }
+  else if(postSender == bonsaiBot.currentEnemy){
+    relationship = "enemy"
+    increaseStat("anger",1)
+  }
   else{
-    if(anger <= 5){
-      channel.send('BONSAI! :)')
+    relationship = "norm"
+  }
+  if(respo[keyword][relationship].length != 5){
+    if(bonsaiBot.stats.anger >= 4){
+      msgIndex = 1
     }
     else{
-      channel.send("I'M TOO MAD FOR THIS RIGHT NOW!! I GOTTA CHILL!! AAAAAAUGH!!")
+      msgIndex = 0
     }
-  }
-}
-
-//check for fake bonsais
-else if ((msg.content.toLowerCase().includes('bοnѕai') || 
-          msg.content.toLowerCase().includes('bonѕаі') || 
-          msg.content.toLowerCase().includes('bo​nsai') || 
-          msg.content.toLowerCase().includes('bons‌‌ai')) 
-          && msg.author.username != "BonsaiBro") {
-  if(anger <= 0){channel.send('clever trick. trying to keep me from saying my word? He he. :)')}
-  else if(anger == 1){channel.send("haha very funny bro. c'mon let me say it... my word!")}
-  else if(anger == 2){channel.send("how about you know it off, bro?")}
-  else if(anger == 3){channel.send("YOU THINK YOU'RE FUNNY?? YOU THINK THIS IS A JOKE, JERRY SEINFELD??")}
-  else if(anger == 4){channel.send("YOU'RE TRYING TO KEEP MY WORD FROM ME??")}
-  else {channel.send("I'M GOIN' APE! I'M RAGIN'!! LET ME SPEAK MY WORD!!!!")}
-  anger++
-}
-
-//told to relax
-else if ((msg.content.toLowerCase().includes('relax, my bro') || msg.content.toLowerCase().includes('relax my bro')) && msg.author.username != "BonsaiBro") {
-  if(anger < 2){
-    channel.send("lol i'm not even mad bro. :)")
-  }
-  else{channel.send("sorry i got heated, bro. now i'm chill tho. :)")}
-  anger = 0
-}
-
-//mocking typos
-else if (msg.content.toLowerCase().includes('know it off') && msg.author.username != "BonsaiBro") {
-  if(anger < 5){
-  channel.send("hey bro, you bullying my typo? that's a yikes from me, bro.")
-  anger += 2
   }
   else{
-    channel.send("YOU TYPO SHAMING ME, BRO??? I'M PISSED AS IS!!")
+    msgIndex = bonsaiBot.stats.anger.amt
   }
-}
-
-//mention of hentai
-else if  (msg.content.toLowerCase().includes('hentai') && msg.author.username != "BonsaiBro") {
-  if(hentai % 5 == 0){
-    if(hentai % 10 == 0){
-      channel.send("we talkin' hentai??")
-      anger = anger-1
+  channel.send(translateMsg(respo[keyword][relationship][msgIndex],postSender))
+  if(respo[keyword].statChange.length > 0){
+    if(respo[keyword].statChange[0] == "increase"){
+      increaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
+    }
+    else if(respo[keyword].statChange[0] == "decrease"){
+      decreaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
     }
     else{
-      channel.send("bro, i love it when we talk hentai in here. :)")
-      anger = 0
+      if(relationship != "enemy"){
+        resetStat(respo[keyword].statChange[1])
+      }
     }
   }
-  hentai++
 }
 
-//polycule interest
-else if  (msg.content.toLowerCase().includes('polycule') && msg.author.username != "BonsaiBro") {
-  if(polycule % 3 == 0){
-    channel.send("polycule? sign me up!")
-  }
-  polycule++
+function translateMsg(msg,postSender){
+  let msg1 = msg.replace("EMOJIHERE",bonsaiBot.emoji)
+  let msg2 = msg1.replace("NAMEHERECAPS",postSender.toUpperCase())
+  let msg3 = msg2.replace("NAMEHERE",postSender)
+  return msg3
 }
-
-//statcheck
-else if  (msg.content.toLowerCase().includes("bro u ok") && msg.author.username != "BonsaiBro") {
-channel.send(
-`anger lvl: ${anger}
-hentai interest: ${hentai}
-polycule interest: ${polycule}`
-)}
-})
 
 client.login(secrets.token);
