@@ -13,6 +13,10 @@ const input =  {
             "keywords":["goodnight"]
         },
         {
+            "name":"love",
+            "keywords":["love you bro","love you too bro","i love you bonsai","bro i love you"]
+        },
+        {
             "name":"namecall",
             "keywords":["bonsai bro","bonsaibro"]
         },
@@ -35,10 +39,6 @@ const input =  {
         {
             "name":"typos",
             "keywords":["know it off","hopig"]
-        },
-        {
-            "name":"love",
-            "keywords":["love you bro","love you too bro"]
         },
         {
             "name":"friendChk",
