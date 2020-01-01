@@ -295,6 +295,7 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
   if(respo[keyword].statChange.length > 0){
     if(respo[keyword].statChange[0] == "increase"){
       increaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
+      bonsaicheck(channel)
       if(respo[keyword].statChange[1] != "bonsai"){
         decreaseFriend(postSender,1,channel)
       }
@@ -317,6 +318,32 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
   }
   if(relationship == "enemy"){
     //increaseStat("anger",1)
+  }
+}
+
+function bonsaicheck(channel){
+  if(bonsaiBot.stats.bonsai.amt % 100 == 0){
+    channel.send("BONSAI")
+    channel.send("THROUGH")
+    channel.send("MY")
+    channel.send("VEINS")
+    channel.send("I")
+    channel.send("FEEL")
+    channel.send("BONSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIII")
+    channel.send("https://www.youtube.com/watch?v=4pwJ8JCUdqM")
+  }
+  else if(bonsaiBot.stats.bonsai.amt % 50 == 0){
+    channel.send("TIME")
+    channel.send("TO")
+    channel.send("FEEL")
+    channel.send("BONSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIII")
+    channel.send("https://www.youtube.com/watch?v=4pwJ8JCUdqM")
+  }
+  else if(bonsaiBot.stats.bonsai.amt % 25 == 0){
+    channel.send("I")
+    channel.send("FEEL")
+    channel.send("BONSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIII")
+    channel.send("https://www.youtube.com/watch?v=4pwJ8JCUdqM")
   }
 }
 

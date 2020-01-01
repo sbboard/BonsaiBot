@@ -150,7 +150,7 @@ const respo =  {
         "norm":[`let's make sure bonsai is the only b-word used in this server, kay NAMEHERE?`,
     `I'M GONNA PUT YOU IN A FULL NELSON BRO`],
         "enemy":[`typical NAMEHERE, using the bad b-word instead of the good one EMOJIHERE`,
-    `hey NAMEHERE, trying not to embarass yourself lol jk`],
+    `hey NAMEHERE, try not to embarass yourself lol jk`],
         "statChange":["increase","anger",1]
     },
     "hentai":{

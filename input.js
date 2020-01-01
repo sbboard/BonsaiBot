@@ -45,8 +45,8 @@ const input =  {
         //"knockKnock":["knock knock"],
         ],
     "silent":{
-        "faithPromote":["god","jesus","married","bible","pray","energy","christ"],
-        "sinPromote":["drug","sex","porn","weed","youtube"],
+        "faithPromote":["god","jesus","married","bible","pray","energy","christ","lord"],
+        "sinPromote":["drug","sex","porn","weed","youtube","podcast"],
         "likes":["candy","kiss","wow","yeah","love","thank","cool","sorry","nice"],
         "hates":["gun","no","fuck","fake","furry","hate","bad"],
     },
