@@ -1,9 +1,10 @@
 const secrets = require("./secrets.js")
-const bonsaiBot = require("./brain.js")
+const bonsaiBot = require('./save/save.json')
 const input = require("./input.js")
 const respo = require("./responses.js")
 const Discord = require('discord.js');
 const client = new Discord.Client();
+var fs = require('fs');
 
 ///////////////////////////////////////////////////////////////
 //temporary conditions
@@ -13,12 +14,17 @@ let lastPinger = ""
 let emojiSeek = false
 let jokeSeek = false
 let stumbling = false
+let apologyCount = 0
 
 ///////////////////////////////////////////////////////////////
 //functions
 //////////////////////////////////////////////////////////////////
 function saveProg(){
-
+  fs.writeFile("./save/save.json", JSON.stringify(bonsaiBot), function(err) {
+      if (err) {
+          console.log(err);
+      }
+  });
 }
 
 function getRandom(max){
@@ -49,6 +55,10 @@ function increaseFriend(friend,amt,lastChannel){
     lastChannel.send(`${bonsaiBot.currentBF} bro i really admire you. what emoji do you like the most?`)
     emojiSeek = true
   }
+  if(bonsaiBot.currentEnemy != getEnemy()){
+    lastChannel.send(`hey ${getEnemy().toLowerCase()} i've been thinking and i'm kinda pissed at you ngl lol ${bonsaiBot.emoji}`)
+    bonsaiBot.currentEnemy = getEnemy().toLowerCase()
+  }
 }
 
 function decreaseFriend(friend,amt,lastChannel){
@@ -57,6 +67,11 @@ function decreaseFriend(friend,amt,lastChannel){
   if(bonsaiBot.currentEnemy != getEnemy()){
     lastChannel.send(`hey ${getEnemy().toLowerCase()} i've been thinking and i'm kinda pissed at you ngl lol ${bonsaiBot.emoji}`)
     bonsaiBot.currentEnemy = getEnemy().toLowerCase()
+  }
+  if(bonsaiBot.currentBF != getBestFriend()){
+    bonsaiBot.currentBF = getBestFriend().toLowerCase()
+    lastChannel.send(`${bonsaiBot.currentBF} bro i really admire you. what emoji do you like the most?`)
+    emojiSeek = true
   }
 }
 
@@ -280,8 +295,14 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
   }
   else if(keyword == "sorry"){
     let buddy = bonsaiBot.friends.find(o => o.name == postSender)
-    if(buddy.friendLvl >= 0){
+    if(buddy.friendLvl >= 0 && apologyCount < 5){
       channel.send(`no need to apologize bro we're just living the bonsai lifestyle lol`)
+      apologyCount++
+    }
+    else if(buddy.friendLvl >= 0 && apologyCount >= 5){
+      channel.send(`BRO WTF WHY IS EVERYONE APOLOGIZING TO ME FOR NO REASON?? BRO YOU THINK I'M THAT INSECURE?? WELL NOW I'M PISSED NICE GOING BRO`)
+      increaseStat('anger',4)
+      apologyCount = 0
     }
     else{
       channel.send(`real talk? i was hopig you would apologize... this means a lot to me bro, but not in a weird way lol ${bonsaiBot.emoji}`)
@@ -301,6 +322,7 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
       }
       else{
         increaseFriend(postSender,2,channel)
+        saveProg()
       }
     }
     else if(respo[keyword].statChange[0] == "decrease"){

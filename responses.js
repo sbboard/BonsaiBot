@@ -34,7 +34,7 @@ const respo =  {
             `you know... guys like you? you think you're so clever. you think you're real cute. but you're not. you're pathetic. keeping a bro's word from him? disgusting. i can't help but feel bad for you.`,
             `you pathetic little worm. trying to keep my word from me. i'm so pissed`
         ],
-        "statChange":["increase","anger",1]
+        "statChange":["increase","anger",2]
     },
     "bonsai":{
         "bff":[
@@ -176,6 +176,18 @@ const respo =  {
         "norm":['wtf ya lol','WHY THE FROWN? CUZ I AM MAD!'],
         "enemy":['wtf...',`btw i'm pissed`],
         "statChange":['increase','anger',1]
+    },
+    "love":{
+        "bff":[`bro... i guess when it comes down to it we are lovers. purely platonic ofc but lovers nonetheless EMOJIHERE`,`CAN'T FEEL THE LOVE WHEN I'M SO PISSED!`],
+        "norm":['lol we love we bonsai',`BRO YOU SURE YOU LOVE ME? CUZ I'M PRETTY PISSED OVER HERE!`],
+        "enemy":['lol bro that love is one-sided hate to break it to you lol',`BRO YOU DON'T LOVE ME! YOU DON'T KNOW WHAT LOVE IS!`],
+        "statChange":[]
+    },
+    "layabouts":{
+        "bff":[`bro i'm only telling you thus cuz we're close... i'd be weary of those layabouts if i were you lol`,`BRO I'M TOO PISSED TO LAY ABOUT!`],
+        "norm":[`layabouts...? where i'm from, those are the cursed people lol EMOJIHERE`,`HOW ABOUT YOU LAY OFF BRO!`],
+        "enemy":['hmph... you actually remind me of a layabout, NAMEHERE lol',`LAYABOUTS? HOW COME YOU NEVER ASK ME WHAT I'M MAD ABOUTS?`],
+        "statChange":[]
     },
 }
 
