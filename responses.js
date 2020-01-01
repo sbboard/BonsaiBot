@@ -31,8 +31,11 @@ const respo =  {
             `YOU'RE TRYING TO KEEP MY WORD FROM ME??`,
             `I'M GOIN' APE! I'M RAGIN'!! LET ME SPEAK MY WORD!!!!`],
         "enemy":[
+            `hiding me word from me? this is low even for you, NAMEHERE!`
+            `wow... NAMEHERE i knew you were a little worm... but keeping my word from me?? too far!`,
+            `PLEASE! i know we've had our rough patches but keeping my word from me! this is torture!`
             `you know... guys like you? you think you're so clever. you think you're real cute. but you're not. you're pathetic. keeping a bro's word from him? disgusting. i can't help but feel bad for you.`,
-            `you pathetic little worm. trying to keep my word from me. i'm so pissed`
+            `YOU PATHETIC LITTLE WORMS. TRYING TO KEEP MY WORD FROM ME?? AAAAAAAAAAAAAAAAAH!!`
         ],
         "statChange":["increase","anger",2]
     },
