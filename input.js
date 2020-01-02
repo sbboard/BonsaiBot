@@ -38,7 +38,7 @@ const input =  {
         },
         {
             "name":"typos",
-            "keywords":["know it off","hopig"]
+            "keywords":["know it off","hopig","wall of something"]
         },
         {
             "name":"friendChk",

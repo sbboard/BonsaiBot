@@ -38,7 +38,7 @@ const respo =  {
             `wow... NAMEHERE i knew you were a little worm... but keeping my word from me?? too far!`,
             `PLEASE! i know we've had our rough patches but keeping my word from me! this is torture!`,
             `you know... guys like you? you think you're so clever. you think you're real cute. but you're not. you're pathetic. keeping a bro's word from him? disgusting. i can't help but feel bad for you.`,
-            `YOU PATHETIC LITTLE WORMS. TRYING TO KEEP MY WORD FROM ME?? AAAAAAAAAAAAAAAAAH!!`
+            `YOU PATHETIC LITTLE WORM. TRYING TO KEEP MY WORD FROM ME?? AAAAAAAAAAAAAAAAAH!!`
         ],
         "statChange":["increase","anger",1]
     },
