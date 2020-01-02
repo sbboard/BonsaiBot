@@ -33,7 +33,12 @@ function getRandom(max){
 
 function increaseStat(statName,chng){
   if(bonsaiBot.stats[statName].amt < bonsaiBot.stats[statName].max){
+    if(bonsaiBot.stats[statName].amt + chng < bonsaiBot.stats[statName].max){
     bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].amt + chng
+    }
+    else{
+      bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].max
+    }
   }
 }
 
@@ -135,7 +140,7 @@ if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<
   //check for sin
   for(let i = 0; i < input.silent.sinPromote.length; i++){if(msg.content.toLowerCase().includes(input.silent.sinPromote[i])){
     decreaseStat("faith",1)
-    if(bonsaiBot.stats.faith.amt == 0){
+    if(bonsaiBot.stats.faith.amt == 1){
       channel.send(`bro all i think about is ${input.silent.sinPromote[i]} these days`)
     }
     else if(bonsaiBot.stats.faith.amt == 10){
@@ -202,7 +207,7 @@ if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<
     else if(bonsaiBot.stats.faith.amt == 90){
       channel.send(`i will straight up murder anyone who doesn't bonsai with ${input.silent.faithPromote[i]}. do i agree with the crusades? no. not entirely, at least.`)
     }
-    else if(bonsaiBot.stats.faith.amt == 99){
+    else if(bonsaiBot.stats.faith.amt == 98){
       channel.send(`hey bros it's me -- bonsai bot. i think it's time we inforced a 'catholics only' rule in chat. ${bonsaiBot.emoji} ${bonsaiBot.emoji} ${bonsaiBot.emoji}`)
     }
   }}
@@ -333,8 +338,11 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
     }
     else{
       if(relationship != "enemy"){
-        resetStat(respo[keyword].statChange[1])
-        increaseFriend(postSender,1,channel)
+        //hacked it so only work with anger
+        if(bonsaiBot.stats.anger.amt >= bonsaiBot.stats.anger.max){
+          resetStat(respo[keyword].statChange[1])
+          increaseFriend(postSender,1,channel)
+        }
       }
     }
   }

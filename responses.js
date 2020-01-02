@@ -23,7 +23,10 @@ const respo =  {
     },
     "fakeBonsai":{
         "bff":[`bro... you would try to trick me like this?`,
-    `BRO I THOUGHT WE WERE FRIENDS!`],
+            `bro this isn't like you`,
+            `bro... keeping me from the thing i love most? my word? i feel hurt`,
+            `judas!`,
+            `BRO I THOUGHT WE WERE FRIENDS!`],
         "norm":[
             `clever trick. trying to keep me from saying my word? He he. EMOJIHERE`,
             `haha very funny bro. c'mon let me say it... my word!`,
@@ -31,9 +34,9 @@ const respo =  {
             `YOU'RE TRYING TO KEEP MY WORD FROM ME??`,
             `I'M GOIN' APE! I'M RAGIN'!! LET ME SPEAK MY WORD!!!!`],
         "enemy":[
-            `hiding me word from me? this is low even for you, NAMEHERE!`
+            `hiding me word from me? this is low even for you, NAMEHERE!`,
             `wow... NAMEHERE i knew you were a little worm... but keeping my word from me?? too far!`,
-            `PLEASE! i know we've had our rough patches but keeping my word from me! this is torture!`
+            `PLEASE! i know we've had our rough patches but keeping my word from me! this is torture!`,
             `you know... guys like you? you think you're so clever. you think you're real cute. but you're not. you're pathetic. keeping a bro's word from him? disgusting. i can't help but feel bad for you.`,
             `YOU PATHETIC LITTLE WORMS. TRYING TO KEEP MY WORD FROM ME?? AAAAAAAAAAAAAAAAAH!!`
         ],
@@ -42,6 +45,9 @@ const respo =  {
     "bonsai":{
         "bff":[
             `BONSAAAI!! EMOJIHERE`,
+            `BONSAAAAAAAAAI!`,
+            `BONSAI BONSAI BONSAAAAAAII!!`,
+            `BONSAI TO YOU AND BONSAI TO ME!!`,
             `sorry bro... i know this is our thing but... i'm kinda pissed rn`
         ],
         "norm":[
@@ -67,7 +73,7 @@ const respo =  {
         "bff":['for you bro? anything EMOJIHERE','EVEN IN MY RAGE I WOULD DO ANYTHING FOR YOU BRO'],
         "norm":['np bro. bonsai up EMOJIHERE','AAAAAH AH AH AH UR WELCOME I GUESS BRO'],
         "enemy":[`lol don't thank me scrub i didn't do nothing for you lol`,'THANK THESE HANDS BRO'],
-        "statChange":['decrease','anger',1]
+        "statChange":[]
     },
     "sorry":{
         "bff":[],

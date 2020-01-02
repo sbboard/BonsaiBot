@@ -22,7 +22,7 @@ const input =  {
         },
         {
             "name":"fakeBonsai",
-            "keywords":["bonzai","bonasi","b*nsai","bonsi","bοnѕai","bonѕаі","bo​nsai","bons‌‌ai","bo*sai","bons*i","bonsia"]
+            "keywords":["bonzai","bonasi","b*nsai","bonsi","bοnѕai","bonѕаі","bo​nsai","bons‌‌ai","bo*sai","bons*i","bonsia","bonsi"]
         },
         {
             "name":"bonsai",
