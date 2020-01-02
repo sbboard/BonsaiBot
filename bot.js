@@ -57,11 +57,11 @@ function increaseFriend(friend,amt,lastChannel){
   buddy.friendLvl = buddy.friendLvl + amt
   if(bonsaiBot.currentBF != getBestFriend()){
     bonsaiBot.currentBF = getBestFriend().toLowerCase()
-    lastChannel.send(`${bonsaiBot.currentBF} bro i really admire you. what emoji do you like the most?`)
+    lastChannel.send(`${bonsaiBot.currentBF} bro i really admire you. you got a favorite emoji?`)
     emojiSeek = true
   }
   if(bonsaiBot.currentEnemy != getEnemy()){
-    lastChannel.send(`hey ${getEnemy().toLowerCase()} i've been thinking and i'm kinda pissed at you ngl lol ${bonsaiBot.emoji}`)
+    lastChannel.send(`getting to know ${friend} has made me realize how unbonsai ${getEnemy().toLowerCase()} is ${bonsaiBot.emoji}`)
     bonsaiBot.currentEnemy = getEnemy().toLowerCase()
   }
 }
@@ -69,13 +69,17 @@ function increaseFriend(friend,amt,lastChannel){
 function decreaseFriend(friend,amt,lastChannel){
   let buddy = bonsaiBot.friends.find(o => o.name == friend)
   buddy.friendLvl = buddy.friendLvl - amt
+  if(buddy.friendLvl < -50){
+    lastChannel.send(`${getEnemy().toLowerCase()}... i've been thinking... this whole grudge holding thing isn't very bonsai. i've decided to put the past behind us lol ${bonsaiBot.emoji}`)
+    buddy.friendLvl = 5
+  }
   if(bonsaiBot.currentEnemy != getEnemy()){
-    lastChannel.send(`hey ${getEnemy().toLowerCase()} i've been thinking and i'm kinda pissed at you ngl lol ${bonsaiBot.emoji}`)
+    lastChannel.send(`btw ${getEnemy().toLowerCase()} does not give me very bonsai vibes iykwim ${bonsaiBot.emoji}`)
     bonsaiBot.currentEnemy = getEnemy().toLowerCase()
   }
   if(bonsaiBot.currentBF != getBestFriend()){
+    lastChannel.send(`maybe this whole bff thing with ${bonsaiBot.currentBF} was just a phase. ${getBestFriend().toLowerCase()} is looking really bonsai right now. what emoji do you like the most, ${getBestFriend().toLowerCase()}?`)
     bonsaiBot.currentBF = getBestFriend().toLowerCase()
-    lastChannel.send(`${bonsaiBot.currentBF} bro i really admire you. what emoji do you like the most?`)
     emojiSeek = true
   }
 }
