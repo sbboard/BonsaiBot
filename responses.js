@@ -8,7 +8,7 @@ const respo =  {
             `bro... i wanna rage...`],
         "norm":[
             `that's the name bro, don't wear it out lol. EMOJIHERE`,
-            `that's right bonsai bro. i'm all about living in the moment in being a bro! EMOJIHERE`,
+            `that's right -- bonsai bro! i'm all about living in the bonsai moment and being a bro! EMOJIHERE`,
             `bonsaaaaaaaiii bro! EMOJIHERE`,
             `huh? you say something?`,
             `DON'T EVEN SAY MY NAME, BRO. I'M PISSED!`],
