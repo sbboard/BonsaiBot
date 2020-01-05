@@ -81,6 +81,13 @@ const respo =  {
         "enemy":[],
         "statChange":[]
     },
+    "agree":{
+        "bff":["bro i'm glad we see eye to eye on this. it's like we're two giant bonsai tree, and this agreeance is a hammock between the two of us. EMOJIHERE",
+    "BRO GLAD WE AGREE BUT SAD THAT MEANS YOU PROBABLY FEEL AS PISSED AS I DO!"],
+        "norm":["bro... it makes me happy we're on the same wave length lol","BRO I DOUBT IT! I DOUBT IIIIIIIIIITT AAAAAAAAAAAAAAAAAAAAAAAAH"],
+        "enemy":["ppfft bro you agree? guess i change my mind then lol","BRO IF YOU AGREE THEN I'M GONNA CUT OFF MY FINGERS SO THEY NEVER TYPE SUCH DUMB DUMB WORDS EVER AGAIN LOL"],
+        "statChange":["decrease","anger",1]
+    },
     "vibeCmd":{
         "bff":[],
         "norm":[],

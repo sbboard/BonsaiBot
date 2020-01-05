@@ -41,6 +41,10 @@ const input =  {
             "keywords":["know it off","hopig","wall of something"]
         },
         {
+            "name":"agree",
+            "keywords":["i agree bro","you're right bro"]
+        },
+        {
             "name":"friendChk",
             "keywords":["who are your real bros"]
         },
