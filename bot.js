@@ -54,10 +54,14 @@ function resetStat(statName){
 
 function increaseFriend(friend,amt,lastChannel){
   let buddy = bonsaiBot.friends.find(o => o.name == friend)
-  buddy.friendLvl = buddy.friendLvl + amt
+  let numbro = amt
+  if(friend == bonsaiBot.currentBF){
+    numbro = amt - 1
+  }
+  buddy.friendLvl = buddy.friendLvl + numbro
   if(bonsaiBot.currentBF != getBestFriend()){
     bonsaiBot.currentBF = getBestFriend().toLowerCase()
-    lastChannel.send(`${bonsaiBot.currentBF} bro i really admire you. you got a favorite emoji?`)
+    lastChannel.send(`${bonsaiBot.currentBF} bro i really admire you. you're my emoji-model lol. that's like a role model but... for emojis lol`)
     emojiSeek = true
   }
   if(bonsaiBot.currentEnemy != getEnemy()){
@@ -68,7 +72,11 @@ function increaseFriend(friend,amt,lastChannel){
 
 function decreaseFriend(friend,amt,lastChannel){
   let buddy = bonsaiBot.friends.find(o => o.name == friend)
-  buddy.friendLvl = buddy.friendLvl - amt
+  let numbro = amt
+  if(friend == bonsaiBot.currentBF){
+    numbro = amt * 2
+  }
+  buddy.friendLvl = buddy.friendLvl - numbro
   if(buddy.friendLvl < -50){
     lastChannel.send(`${friend}... i've been thinking... this whole grudge holding thing isn't very bonsai. i've decided to put the past behind us lol ${bonsaiBot.emoji}`)
     buddy.friendLvl = 5
@@ -326,9 +334,11 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
     if(respo[keyword].statChange[0] == "increase"){
       increaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
       bonsaicheck(channel)
+      //check if anger is increased
       if(respo[keyword].statChange[1] != "bonsai"){
         decreaseFriend(postSender,1,channel)
       }
+      //if it's a bonsai increase by 2
       else{
         increaseFriend(postSender,2,channel)
         saveProg()
