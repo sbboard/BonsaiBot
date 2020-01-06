@@ -40,16 +40,19 @@ function increaseStat(statName,chng){
       bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].max
     }
   }
+  changeStatus()
 }
 
 function decreaseStat(statName,chng){
   if(bonsaiBot.stats[statName].amt > 0){
     bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].amt - chng
   }
+  changeStatus()
 }
 
 function resetStat(statName){
   bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].default
+  changeStatus()
 }
 
 function increaseFriend(friend,amt,lastChannel){
@@ -101,6 +104,50 @@ function getEnemy(){
   let sortedFriends = bonsaiBot.friends.sort((a, b) => (a.friendLvl > b.friendLvl) ? 1 : -1)
   return sortedFriends[0].name
 }
+
+function changeStatus(){
+  let gameName = ''
+  let urlPlace = ''
+  
+  switch (bonsaiBot.stats.anger.amt) {
+    case 0:
+      gameName = "feelin bonsai"
+      urlPlace = "https://www.youtube.com/watch?v=VFt7AIArwkc"
+      break;
+    case 1:
+      gameName = "easy like sunday morning lol"
+      urlPlace = "https://www.youtube.com/watch?v=3DSVMDmzCcA"
+      break;
+    case 2:
+      gameName = "wanna tell everyone to lighten up iykwim lol"
+      urlPlace = "https://www.youtube.com/watch?v=KIYiGA_rIls"
+      break;
+    case 3:
+      gameName = "run fa fa fah away bro lol"
+      urlPlace = "https://www.youtube.com/watch?v=O52jAYa4Pm8"
+      break;
+    case 4:
+      gameName = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHH"
+      urlPlace = "https://www.youtube.com/watch?v=_C15LZYX6ZY"
+      break;
+    default:
+      gameName = ""
+      urlPlace = ""
+  }
+
+  client.user.setPresence({
+      game: {
+          name: gameName,
+          type: "STREAMING",
+          url: urlPlace
+      }
+  });
+}
+
+client.on('ready', () => {
+  client.user.setStatus('available')
+  changeStatus()
+})
 
 ///////////////////////////////////////////////////////////////
 //on message recieve
