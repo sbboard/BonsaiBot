@@ -101,7 +101,7 @@ const respo =  {
         "statChange":[]
     },
     "yougood":{
-        "bff":["i'm with by bff, i'm with my bros, and i've chuggin an 8oz of bonsai juice. could life get any better? EMOJIHERE",
+        "bff":["i'm with my bff, i'm with my bros, and i've chuggin an 8oz of bonsai juice. could life get any better? EMOJIHERE",
         "lol bro i'm bonsai af. about to watch",
         "ya bro i'm good. some bros around here are kinda wormin me off but i'm still bonsai.",
         "tbh? i've had better days.",
@@ -219,7 +219,7 @@ const respo =  {
         'thanks bro i needed some love rn EMOJIHERE',
         `CAN'T FEEL THE LOVE WHEN I'M SO PISSED!`],
         "norm":['lol we love we bonsai',
-        'eat, love, bonsai','lol thought you were about to jump into an RP glad we keep it simple and clean in here lol',
+        'eat, love, bonsai EMOJIHERE','lol thought you were about to jump into an RP glad we keep it simple and clean in here lol',
         'bonsai is love baby lol',`BRO YOU SURE YOU LOVE ME? CUZ I'M PRETTY PISSED OVER HERE!`],
         "enemy":['lol bro that love is one-sided hate to break it to you lol',`BRO YOU DON'T LOVE ME! YOU DON'T KNOW WHAT LOVE IS!`],
         "statChange":[]
