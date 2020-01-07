@@ -11,7 +11,7 @@ var fs = require('fs');
 //////////////////////////////////////////////////////////////////
 let lastPing = 0
 let lastPinger = ""
-let emojiSeek = false
+let emojiSeek = true
 let jokeSeek = false
 let stumbling = false
 let apologyCount = 0
@@ -65,7 +65,7 @@ function increaseFriend(friend,amt,lastChannel){
   if(bonsaiBot.currentBF != getBestFriend()){
     bonsaiBot.currentBF = getBestFriend().toLowerCase()
     lastChannel.send(`${bonsaiBot.currentBF} bro i really admire you. you're my emoji-model lol. that's like a role model but... for emojis lol`)
-    emojiSeek = true
+    //emojiSeek = true
   }
   if(bonsaiBot.currentEnemy != getEnemy()){
     lastChannel.send(`getting to know ${friend} has made me realize how unbonsai ${getEnemy().toLowerCase()} is ${bonsaiBot.emoji}`)
@@ -91,7 +91,7 @@ function decreaseFriend(friend,amt,lastChannel){
   if(bonsaiBot.currentBF != getBestFriend()){
     lastChannel.send(`maybe this whole bff thing with ${bonsaiBot.currentBF} was just a phase. ${getBestFriend().toLowerCase()} is looking really bonsai right now. what emoji do you like the most, ${getBestFriend().toLowerCase()}?`)
     bonsaiBot.currentBF = getBestFriend().toLowerCase()
-    emojiSeek = true
+    //emojiSeek = true
   }
 }
 
@@ -181,8 +181,8 @@ if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<
   else{
     bonsaiBot.emoji = msg.content.match(/\ud83c[\udf00-\udfff]|\ud83d[\udc00-\ude4f]|\ud83d[\ude80-\udeff]/g)[0]
   }
-  channel.send(`great emoji choice, bro. ${bonsaiBot.emoji} is my new fave emoji. bonsai to that lol`)
-  emojiSeek = false
+  //channel.send(`great emoji choice, bro. ${bonsaiBot.emoji} is my new fave emoji. bonsai to that lol`)
+  //emojiSeek = false
 }
 
 ///////////////////////////////////////////////////////////////

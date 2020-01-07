@@ -100,6 +100,16 @@ const respo =  {
         "enemy":["i'll never tell you bro","I'M PISSED BRO"],
         "statChange":[]
     },
+    "yougood":{
+        "bff":["i'm with by bff, i'm with my bros, and i've chuggin an 8oz of bonsai juice. could life get any better? EMOJIHERE",
+        "lol bro i'm bonsai af. about to watch",
+        "ya bro i'm good. some bros around here are kinda wormin me off but i'm still bonsai.",
+        "tbh? i've had better days.",
+        "LOL I'M NOT GONNA LIE DUDE I AM ABSOLUTELY NOT GOOD BRO"],
+        "norm":["i'm hella good bro. bonsai! EMOJIHERE","NOPE NOPE NOPE NOPE NOOOOOOOOOOOOOOPE"],
+        "enemy":["lol doing better than you at least","I'D BE BETTER IF YOU WEREN'T AROUND, CHUD EMOJIHERE"],
+        "statChange":["decrease","anger",1]
+    },
     "goodnight":{
         "bff":['goodnight bro. have bonsai dreams lol EMOJIHERE',
     `YOU'D GO TO BED IN THE MIDDLE OF A RAGE??`],
@@ -117,10 +127,19 @@ const respo =  {
     },
     "lol":{
         "bff":['love laughing with you bro EMOJIHERE',
+        'live, laugh, love EMOJIHERE',
+        "bro i missed it what we laughin about lol",
+        "bro we're usually on the same wave but tbh? i ain't laughin",
     'WOW BRO, YOU THINK SOMETHING IS FUNNY HERE??'],
         "norm":['literally lolling rn',
+        "lol",
+        "lol",
+        "lol jk tho",
     'GONNA LAUGH WHEN I PUNCH YOU IN THE HEAD BRO'],
         "enemy":['NAMEHERE sure has a good sense of humor jk',
+        "no one's laughin bro",
+        "bro why you laughin so loud who you trying to impress lol",
+        "lol? smh",
     'LOL? WHAT DOES THAT STAND FOR? LORD OF LOSERS??'],
         "statChange":[]
     },
@@ -194,8 +213,14 @@ const respo =  {
         "statChange":['increase','anger',1]
     },
     "love":{
-        "bff":[`bro... i guess when it comes down to it we are lovers. purely platonic ofc but lovers nonetheless EMOJIHERE`,`CAN'T FEEL THE LOVE WHEN I'M SO PISSED!`],
-        "norm":['lol we love we bonsai',`BRO YOU SURE YOU LOVE ME? CUZ I'M PRETTY PISSED OVER HERE!`],
+        "bff":[`bro... i guess when it comes down to it we are lovers. purely platonic ofc but lovers nonetheless EMOJIHERE`,
+        'i love you too bro lol',
+        'bro? wish i could hug you through this gosh dang computer screen',
+        'thanks bro i needed some love rn EMOJIHERE',
+        `CAN'T FEEL THE LOVE WHEN I'M SO PISSED!`],
+        "norm":['lol we love we bonsai',
+        'eat, love, bonsai','lol thought you were about to jump into an RP glad we keep it simple and clean in here lol',
+        'bonsai is love baby lol',`BRO YOU SURE YOU LOVE ME? CUZ I'M PRETTY PISSED OVER HERE!`],
         "enemy":['lol bro that love is one-sided hate to break it to you lol',`BRO YOU DON'T LOVE ME! YOU DON'T KNOW WHAT LOVE IS!`],
         "statChange":[]
     },

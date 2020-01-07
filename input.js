@@ -45,6 +45,10 @@ const input =  {
             "keywords":["i agree bro","you're right bro"]
         },
         {
+            "name":"yougood",
+            "keywords":["you good bro","bro you good","you okay bro","bro are you ok"]
+        },
+        {
             "name":"friendChk",
             "keywords":["who are your real bros","bro check"]
         },
