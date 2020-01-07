@@ -100,6 +100,18 @@ const respo =  {
         "enemy":["i'll never tell you bro","I'M PISSED BRO"],
         "statChange":[]
     },
+    "youtoobro":{
+        "bff":['glad i have a bff like you bro EMOJIHERE','AAAAAAAAAAAAAAAAAAAAAAAH'],
+        "norm":['bonsai to that bro EMOJIHERE','AAAAAAAAH AAAAAH AAAAAAAAAH I WANNA STOP THE RAGE BUT I CANNOT!'],
+        "enemy":["up yours bro","DON'T LOOK AT ME!"],
+        "statChange":[]
+    },
+    "goodcall":{
+        "bff":['lol bro i just call em as i see em EMOJIHERE','IT WOULD BE A GOOD CALL FOR YOU TO GET AWAY FROM ME RN'],
+        "norm":["where i'm from we call it a bonsai call EMOJIHERE","GOOD CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHH"],
+        "enemy":["lol you think it's good? then i think it's bad lol","TRYING TO HOLD BACK A THICK CURSE ON THE EDGE OF MY LIPS"],
+        "statChange":[]
+    },
     "yougood":{
         "bff":["i'm with my bff, i'm with my bros, and i've chuggin an 8oz of bonsai juice. could life get any better? EMOJIHERE",
         "lol bro i'm bonsai af. about to watch",
