@@ -94,6 +94,12 @@ const respo =  {
         "enemy":["like i'd tell you, narc bro","YOU DON'T CARE HOW I FEEL BRO"],
         "statChange":[]
     },
+    "itsok":{
+        "bff":["bro... this is why you're my bff. you just makes things okay EMOJIHERE","BRO I'M ACTUALLY NOT OKAY PLEASE HELP BRO"],
+        "norm":["thanks bro. you're a bonsai bro yourself.","NOT OKAY NOT OKAY NOT OKAY AAAAAAAAH"],
+        "enemy":["i'd love to do a bonsai blast on your pillow","IS IT OKAY IF I SLAP YOUR EARS?"],
+        "statChange":[]
+    },
     "friendChk":{
         "bff":[],
         "norm":[],
