@@ -81,12 +81,30 @@ const respo =  {
         "enemy":[],
         "statChange":[]
     },
+    "imgood":{
+        "bff":["sick bro EMOJIHERE","GLAD ONE OF US IS DOING GOOD BRO"],
+        "norm":["bro? nice.","BRO WELL I FEEL LIKE I JUST STUCK A FORK IN MY EYE"],
+        "enemy":["that's too bad lol","HOPE I CAN FIX THAT LOL"],
+        "statChange":[]
+    },
+    "playlist":{
+        "bff":["slipknot lol","ALL MY MUSIC GOT DELETE EXCEPT FOR WEEZER'S COVER ALBUM I AM PISSED"],
+        "norm":["bro i'm listening to dubstep lol","JAZZ!"],
+        "enemy":["moans iykwim lol","THE SOUND OF YOUR BUTT GETTING KICKED"],
+        "statChange":[]
+    },
+    "hello":{
+        "bff":['ah heck ya bro good to see you EMOJIHERE',"BRO! GLAD UR HERE BUT NGL I'M MAD LOL"],
+        "norm":["sup bro hope you're doing bonsai","NOT IN THE MOOD RN BRO LOL"],
+        "enemy":["lol i don't have to talk to you","YO IS THERE A FART EMOJI I COULD USE?"],
+        "statChange":[]
+    },
     "agree":{
         "bff":["bro i'm glad we see eye to eye on this. it's like we're two giant bonsai tree, and this agreeance is a hammock between the two of us. EMOJIHERE",
     "BRO GLAD WE AGREE BUT SAD THAT MEANS YOU PROBABLY FEEL AS PISSED AS I DO!"],
         "norm":["bro... it makes me happy we're on the same wave length lol","BRO I DOUBT IT! I DOUBT IIIIIIIIIITT AAAAAAAAAAAAAAAAAAAAAAAAH"],
         "enemy":["ppfft bro you agree? guess i change my mind then lol","BRO IF YOU AGREE THEN I'M GONNA CUT OFF MY FINGERS SO THEY NEVER TYPE SUCH DUMB DUMB WORDS EVER AGAIN LOL"],
-        "statChange":["decrease","anger",1]
+        "statChange":[]
     },
     "vibeCmd":{
         "bff":[],
@@ -190,8 +208,14 @@ const respo =  {
     },
     "relationship":{
         "bff":[`hey, i get it bro. i've been there. but you're a great bro that lives a bonsai life. follow your heart and you'll find peace. EMOJIHERE`,
+        "bro you are a million dollars. if they can't see that? their loss lol",
+        "bro some people are worth the struggle. frankly bro? i think you're one of those people.",
+        "make her a cd or something bro y'know show her how you feel. you gotta get your emotions out there somehow lol!"
     `bro i'm kinda pissed rn lol. i could use some advice myself. i can't help but want to rage when i get like this. i wanna punch a wall of something lol.`],
         "norm":[`you're overthinking it bro! just be real and open with yourself lol EMOJIHERE`,
+        'the bonsai life is a life absent of strife lol',
+        'lol bro stop wasting your time. my advice to you: bonsai',
+        "NAMEHERE... you'll find the person for you eventually lol. it'll happen when it happens."
     `FORGET ABOUT IT!`],
         "enemy":[`a bro like you, NAMEHERE? lol you're gonna die alone bro`,
     `BRO YOU WANT RELATIONSHIP ADVICE? HOW ABOUT YOU BACK THE BONSAI UP`],

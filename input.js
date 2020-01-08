@@ -6,11 +6,23 @@ const input =  {
         },
         {
             "name":"relationship",
-            "keywords":["bro i need relationship advice"]
+            "keywords":["bro i need relationship advice","i need relationship advice bro"]
         },
         {
             "name":"goodnight",
             "keywords":["goodnight"]
+        },
+        {
+            "name":"playlist",
+            "keywords":["what's on the playlist bro","bro what's on the playlist"]
+        },
+        {
+            "name":"imgood",
+            "keywords":["i'm good bro","bro i'm good"]
+        },
+        {
+            "name":"hello",
+            "keywords":["hello bro","sup bro","bro hello","bro sup"]
         },
         {
             "name":"love",
