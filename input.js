@@ -22,7 +22,7 @@ const input =  {
         },
         {
             "name":"hello",
-            "keywords":["hello bro","sup bro","bro hello","bro sup"]
+            "keywords":["hello bro","sup bro","bro hello","bro sup","hey bro","hi bro"]
         },
         {
             "name":"love",
@@ -67,7 +67,7 @@ const input =  {
         },
         {
             "name":"yougood",
-            "keywords":["you good bro","bro you good","you okay bro","bro are you ok"]
+            "keywords":["you good bro","bro you good","you okay bro","bro are you ok","doing good bro"]
         },
         {
             "name":"itsok",

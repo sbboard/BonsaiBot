@@ -137,12 +137,12 @@ const respo =  {
         "statChange":[]
     },
     "yougood":{
-        "bff":["i'm with my bff, i'm with my bros, and i've chuggin an 8oz of bonsai juice. could life get any better? EMOJIHERE",
-        "lol bro i'm bonsai af. about to watch",
-        "ya bro i'm good. some bros around here are kinda wormin me off but i'm still bonsai.",
-        "tbh? i've had better days.",
+        "bff":["i'm with my bff, i'm with my bros, and i've chuggin an 8oz of bonsai juice. could life get any better? EMOJIHERE how you doing bro?",
+        "lol bro i'm bonsai af. hbu?",
+        "ya bro i'm good. some bros around here are kinda wormin me off but i'm still bonsai. you?",
+        "tbh? i've had better days. hbu?",
         "LOL I'M NOT GONNA LIE DUDE I AM ABSOLUTELY NOT GOOD BRO"],
-        "norm":["i'm hella good bro. bonsai! EMOJIHERE","NOPE NOPE NOPE NOPE NOOOOOOOOOOOOOOPE"],
+        "norm":["i'm hella good bro. yourself?","NOPE NOPE NOPE NOPE NOOOOOOOOOOOOOOPE"],
         "enemy":["lol doing better than you at least","I'D BE BETTER IF YOU WEREN'T AROUND, CHUD EMOJIHERE"],
         "statChange":["decrease","anger",1]
     },
