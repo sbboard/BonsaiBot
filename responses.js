@@ -137,7 +137,8 @@ const respo =  {
         "statChange":[]
     },
     "yougood":{
-        "bff":["i'm with my bff, i'm with my bros, and i'm chuggin an 8oz of bonsai juice. could life get any better? EMOJIHERE how you doing bro?",
+        "bff":[
+            "i'm with my bff, i'm with my bros, and i'm chuggin an 8oz of bonsai juice. could life get any better? EMOJIHERE how you doing bro?",
         "lol bro i'm bonsai af. hbu?",
         "ya bro i'm good. some bros around here are kinda wormin me off but i'm still bonsai. you?",
         "tbh? i've had better days. hbu?",

@@ -59,8 +59,11 @@ function decreaseStat(statName,chng){
   if(statName == 'anger' && rageLock == true){
     console.log("too mad")
   }
-  else{
+  else if(bonsaiBot.stats[statName].amt - chng > -1){
     bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].amt - chng
+  }
+  else{
+    bonsaiBot.stats[statName].amt = 0
   }
   changeStatus()
 }
@@ -326,6 +329,7 @@ if(killSwitch == false){
 //post constant msg
 //////////////////////////////////////////////////////////////////
 function postMsg(keyword,postSender,channel){
+  console.log(keyword)
   let relationship = ""
   let msgIndex = 0
   lastPing = 0
