@@ -12,9 +12,8 @@ var fs = require('fs');
 let lastPing = 0
 let lastPinger = ""
 let emojiSeek = true
-let jokeSeek = false
-let stumbling = false
 let apologyCount = 0
+let rageLock = false
 
 ///////////////////////////////////////////////////////////////
 //functions
@@ -40,18 +39,39 @@ function increaseStat(statName,chng){
       bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].max
     }
   }
+  if(bonsaiBot.stats.anger.amt == 4){
+    rageLock = true
+    clearTimeout(timeout)
+    theTimeOut()
+  }
   changeStatus()
 }
 
+let timeout
+
+function theTimeOut(){
+  timeout = setTimeout(function(){
+    rageLock = false;
+}, 600000);
+}
+
 function decreaseStat(statName,chng){
-  if(bonsaiBot.stats[statName].amt > 0){
+  if(statName == 'anger' && rageLock == true){
+    console.log("too mad")
+  }
+  else{
     bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].amt - chng
   }
   changeStatus()
 }
 
 function resetStat(statName){
-  bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].default
+  if(statName == 'anger' && rageLock == true){
+    console.log("too mad")
+  }
+  else{
+    bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].default
+  }
   changeStatus()
 }
 
@@ -372,6 +392,12 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
       channel.send(`real talk? i was hopig you would apologize... this means a lot to me bro, but not in a weird way lol ${bonsaiBot.emoji}`)
       increaseFriend(postSender,5,channel)
     }
+  }
+  else if(keyword == "relaxCmd" && rageLock == true){
+    channel.send("RELAX!? I'M NOT READY TO RELAX!")
+    channel.send("AAAAAAAAAAAAAAAAAAAAAAAAAHHH")
+    channel.send("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHH")
+    channel.send("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHH")
   }
   else{
   channel.send(translateMsg(respo[keyword][relationship][msgIndex],postSender))

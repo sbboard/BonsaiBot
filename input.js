@@ -35,7 +35,7 @@ const input =  {
         {
             "name":"fakeBonsai",
             "keywords":["bonzai","bonasi","b*nsai","bonsi","bοnѕai","bonѕаі","bo​nsai","bons‌‌ai","bo*sai","bons*i","bonsia","bonsi",
-        "воnsаi","B.O.N.S.A.I","bonesai","bonzi","bonsa","bon si"]
+        "воnsаi","B.O.N.S.A.I","bonesai","bonzi","bon si"]
         },
         {
             "name":"bonsai",

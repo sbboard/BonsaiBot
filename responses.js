@@ -210,12 +210,12 @@ const respo =  {
         "bff":[`hey, i get it bro. i've been there. but you're a great bro that lives a bonsai life. follow your heart and you'll find peace. EMOJIHERE`,
         "bro you are a million dollars. if they can't see that? their loss lol",
         "bro some people are worth the struggle. frankly bro? i think you're one of those people.",
-        "make her a cd or something bro y'know show her how you feel. you gotta get your emotions out there somehow lol!"
+        "make her a cd or something bro y'know show her how you feel. you gotta get your emotions out there somehow lol!",
     `bro i'm kinda pissed rn lol. i could use some advice myself. i can't help but want to rage when i get like this. i wanna punch a wall of something lol.`],
         "norm":[`you're overthinking it bro! just be real and open with yourself lol EMOJIHERE`,
         'the bonsai life is a life absent of strife lol',
         'lol bro stop wasting your time. my advice to you: bonsai',
-        "NAMEHERE... you'll find the person for you eventually lol. it'll happen when it happens."
+        "NAMEHERE... you'll find the person for you eventually lol. it'll happen when it happens.",
     `FORGET ABOUT IT!`],
         "enemy":[`a bro like you, NAMEHERE? lol you're gonna die alone bro`,
     `BRO YOU WANT RELATIONSHIP ADVICE? HOW ABOUT YOU BACK THE BONSAI UP`],
