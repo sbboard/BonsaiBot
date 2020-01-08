@@ -18,7 +18,7 @@ const input =  {
         },
         {
             "name":"imgood",
-            "keywords":["i'm good bro","bro i'm good"]
+            "keywords":["i'm good bro","bro i'm good","bro im good","im good bro","im ok bro"]
         },
         {
             "name":"hello",
