@@ -44,7 +44,7 @@ function increaseStat(statName,chng){
       bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].max
     }
   }
-  if(bonsaiBot.stats.anger.amt == 4 && statName == "anger"){
+  if(bonsaiBot.stats.anger.amt == 4 && statName == "anger" && rageLock == false){
     start = Date.now()
     rageLock = true
     clearTimeout(timeout)
