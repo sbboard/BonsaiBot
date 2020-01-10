@@ -66,6 +66,10 @@ const input =  {
             "keywords":["i agree bro","you're right bro"]
         },
         {
+            "name":"flipCoin",
+            "keywords":["bro flip a coin","coin me bro","flip a coin bro","bro coin me"]
+        },
+        {
             "name":"yougood",
             "keywords":["you good bro","bro you good","you okay bro","bro are you ok","doing good bro"]
         },

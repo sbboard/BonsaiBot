@@ -15,6 +15,11 @@ let emojiSeek = true
 let apologyCount = 0
 let rageLock = false
 
+const delay = 600000
+let start = Date.now()
+
+let timeout
+
 ///////////////////////////////////////////////////////////////
 //functions
 //////////////////////////////////////////////////////////////////
@@ -39,7 +44,8 @@ function increaseStat(statName,chng){
       bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].max
     }
   }
-  if(bonsaiBot.stats.anger.amt == 4){
+  if(bonsaiBot.stats.anger.amt == 4 && statName == "anger"){
+    start = Date.now()
     rageLock = true
     clearTimeout(timeout)
     theTimeOut()
@@ -47,12 +53,10 @@ function increaseStat(statName,chng){
   changeStatus()
 }
 
-let timeout
-
 function theTimeOut(){
   timeout = setTimeout(function(){
     rageLock = false;
-}, 600000);
+}, delay);
 }
 
 function decreaseStat(statName,chng){
@@ -315,7 +319,7 @@ for(let i=0;i<input.constants.length;i++){
 if(killSwitch == false){
   for(let i=0;i<input.random.length;i++){
     if(msg.content.toLowerCase().includes(input.random[i])){
-      if(getRandom(10) == 3){
+      if(getRandom(7) == 3){
         postMsg(input.random[i],sender,channel)
         killSwitch = true
       }
@@ -329,7 +333,6 @@ if(killSwitch == false){
 //post constant msg
 //////////////////////////////////////////////////////////////////
 function postMsg(keyword,postSender,channel){
-  console.log(keyword)
   let relationship = ""
   let msgIndex = 0
   lastPing = 0
@@ -363,10 +366,40 @@ function postMsg(keyword,postSender,channel){
       channel.send(
         `anger: ${bonsaiBot.stats.anger.amt}
 faith: ${bonsaiBot.stats.faith.amt}
-bonsai: ${bonsaiBot.stats.bonsai.amt}`
+bonsai: ${bonsaiBot.stats.bonsai.amt}
+rage lock: ${rageLock}`
         )
     }
   }
+
+  else if(keyword == "flipCoin"){
+    if(relationship == "enemy"){
+      channel.send(respo[keyword][relationship][msgIndex])
+    }
+    else{
+      let coin = getRandom(50)
+      if(bonsaiBot.stats.anger.amt <4){
+        if(coin < 24  ){
+          channel.send("tails bro lol")
+        }
+          else if(coin < 49){
+            channel.send("heads bro")
+        }
+          else{
+            channel.send("bro i dropped it wtf lol")
+        }
+      }
+      else{
+        if(coin < 25  ){
+          channel.send("BRO WHAT YOU TRYING TO STEAL MY COINS NOW?")
+        }
+          else if(coin < 50){
+            channel.send("WHO CARES BRO LEAVE ME BE")
+        }
+      }
+    }
+  }
+
   else if(keyword == "friendChk"){
     if(relationship == "enemy"){
       channel.send(respo[keyword][relationship][msgIndex])
@@ -383,8 +416,12 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
   }
   else if(keyword == "sorry"){
     let buddy = bonsaiBot.friends.find(o => o.name == postSender)
-    if(buddy.friendLvl >= 0 && apologyCount < 5){
+    if(buddy.friendLvl >= 0 && apologyCount < 5 && bonsaiBot.stats.anger.amt < 4){
       channel.send(`no need to apologize bro we're just living the bonsai lifestyle lol`)
+      apologyCount++
+    }
+    else if(buddy.friendLvl >= 0 && apologyCount < 5 && bonsaiBot.stats.anger.amt == 4){
+      channel.send(`WELL WHATEVER DUDE! I'M PISSED NOW! SORRY ISN'T GONNA CUT IT BRO! I'M RAGIN'! I'VE GONE APE! I'M LIVID! YOU THINK YOU CAN FIX ALL THIS JUST BY SAYING SORRY?? BRO! BRO! BRO! NO! EEEEEEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHH!!!`)
       apologyCount++
     }
     else if(buddy.friendLvl >= 0 && apologyCount >= 5){
@@ -392,16 +429,27 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
       increaseStat('anger',4)
       apologyCount = 0
     }
+    else if(buddy.friendLvl < 0 && bonsaiBot.stats.anger.amt == 4){
+      channel.send(`I`)
+      channel.send(`DON'T`)
+      channel.send(`FOR`)
+      channel.send(`GIVE`)
+      channel.send(`YOU`)
+      channel.send(`BRO`)
+    } 
     else{
       channel.send(`real talk? i was hopig you would apologize... this means a lot to me bro, but not in a weird way lol ${bonsaiBot.emoji}`)
       increaseFriend(postSender,5,channel)
     }
   }
   else if(keyword == "relaxCmd" && rageLock == true){
+    const elapsed = Date.now() - start;
+    const remaining = Math.floor((delay - elapsed)/1000); // divide by 1000 for seconds
     channel.send("RELAX!? I'M NOT READY TO RELAX!")
     channel.send("AAAAAAAAAAAAAAAAAAAAAAAAAHHH")
     channel.send("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHH")
     channel.send("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHH")
+    channel.send("I NEED AT LEAST " + remaining + " MORE SECOOOOOOONDS TO CHILL THE EFF DOWN BRO!!!!!!")
   }
   else{
   channel.send(translateMsg(respo[keyword][relationship][msgIndex],postSender))

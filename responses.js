@@ -124,6 +124,12 @@ const respo =  {
         "enemy":["i'll never tell you bro","I'M PISSED BRO"],
         "statChange":[]
     },
+    "flipCoin":{
+        "bff":[],
+        "norm":[],
+        "enemy":["flip off lol","I'M GONNA TAKE THIS COIN... AND SHOVE IT RIGHT DOWN YOUR THROAT BRO. JK THO DON'T BAN ME."],
+        "statChange":[]
+    },
     "youtoobro":{
         "bff":['glad i have a bff like you bro EMOJIHERE','AAAAAAAAAAAAAAAAAAAAAAAH'],
         "norm":['bonsai to that bro EMOJIHERE','AAAAAAAAH AAAAAH AAAAAAAAAH I WANNA STOP THE RAGE BUT I CANNOT!'],
