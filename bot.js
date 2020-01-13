@@ -1,6 +1,7 @@
 const secrets = require("./secrets.js")
 const bonsaiBot = require('./save/save.json')
 const input = require("./input.js")
+const emojiList = require("./emoji.json")
 const respo = require("./responses.js")
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -181,9 +182,21 @@ client.on('ready', () => {
 //////////////////////////////////////////////////////////////////
 client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
   let killSwitch = false
+  let emojiDetected = false
+  let emojiUsed = ""
   lastPing++
   const channel = client.channels.find('name', msg.channel.name)
   const sender = msg.author.username.toLowerCase()
+
+
+  //check for emoji
+  for(let e = 0; e < emojiList.length;e++){
+    if(msg.content.includes(emojiList[e].emoji)){
+      emojiDetected = true
+      emojiUsed = emojiList[e].emoji
+    }
+  }
+
 ///////////////////////////////////////////////////////////////
 //new to bonsai
 //////////////////////////////////////////////////////////////////
@@ -198,7 +211,7 @@ client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
 ///////////////////////////////////////////////////////////////
 //emoji seek check
 //////////////////////////////////////////////////////////////////
-if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<:") > -1 || msg.content.match(/\ud83c[\udf00-\udfff]|\ud83d[\udc00-\ude4f]|\ud83d[\ude80-\udeff]/g) != null)){
+if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<:") > -1 || emojiDetected == true)){
   if(msg.content.indexOf("<:") > -1){
     let cutOne = msg.content.indexOf("<:")
     let cutTwo = msg.content.indexOf(">") + 1
@@ -206,10 +219,8 @@ if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<
     bonsaiBot.emoji = cutEmoji
   }
   else{
-    bonsaiBot.emoji = msg.content.match(/\ud83c[\udf00-\udfff]|\ud83d[\udc00-\ude4f]|\ud83d[\ude80-\udeff]/g)[0]
+    bonsaiBot.emoji = emojiUsed
   }
-  //channel.send(`great emoji choice, bro. ${bonsaiBot.emoji} is my new fave emoji. bonsai to that lol`)
-  //emojiSeek = false
 }
 
 ///////////////////////////////////////////////////////////////
