@@ -2,87 +2,108 @@ const input =  {
     "constants":[
         {
             "name":"sorry",
-            "keywords":["sorry bro","bro i'm sorry","sorry bonsai bro"]
+            "keywords":["sorry"],
+            "needbro": true
         },
         {
             "name":"relationship",
-            "keywords":["bro i need relationship advice","i need relationship advice bro"]
+            "keywords":["i need relationship advice"],
+            "needbro": true
         },
         {
             "name":"goodnight",
-            "keywords":["goodnight"]
+            "keywords":["goodnight"],
+            "needbro": true
         },
         {
             "name":"playlist",
-            "keywords":["what's on the playlist bro","bro what's on the playlist"]
+            "keywords":["whats on the playlist"],
+            "needbro": true
         },
         {
             "name":"imgood",
-            "keywords":["i'm good bro","bro i'm good","bro im good","im good bro","im ok bro"]
+            "keywords":["im good","im ok"],
+            "needbro": true
         },
         {
             "name":"hello",
-            "keywords":["hello bro","sup bro","bro hello","bro sup","hey bro","hi bro"]
+            "keywords":["hello","sup","hey","hi"],
+            "needbro": true
         },
         {
             "name":"love",
-            "keywords":["love you bro","love you too bro","i love you bonsai","bro i love you"]
+            "keywords":["love you"],
+            "needbro": true
         },
         {
             "name":"namecall",
-            "keywords":["bonsai bro","bonsaibro"]
+            "keywords":["bonsai bro","bonsaibro"],
+            "needbro": false
         },
         {
             "name":"fakeBonsai",
             "keywords":["bonzai","bonasi","b*nsai","bonsi","bοnѕai","bonѕаі","bo​nsai","bons‌‌ai","bo*sai","bons*i","bonsia","bonsi",
-        "воnsаi","B.O.N.S.A.I","bonesai","bonzi","bon si"]
+        "воnsаi","B.O.N.S.A.I","bonesai","bonzi","bon si"],
+        "needbro": false
         },
         {
             "name":"bonsai",
-            "keywords":["bonsai"]
+            "keywords":["bonsai"],
+            "needbro": false
         },
         {
             "name":"thanks",
-            "keywords":["thanks bro","thank you bro","bro thank you"]
+            "keywords":["thanks","thank you"],
+            "needbro": true
         },
         {
             "name":"relaxCmd",
-            "keywords":["relax, my bro","relax my bro"]
+            "keywords":["relax"],
+            "needbro": true
         },
         {
             "name":"typos",
-            "keywords":["know it off","hopig","wall of something"]
+            "keywords":["know it off","hopig","wall of something"],
+            "needbro": false
         },
         {
             "name":"youtoobro",
-            "keywords":["you too bro","bro you too"]
+            "keywords":["you too"],
+            "needbro": true
         },
         {
             "name":"goodcall",
-            "keywords":["good call bro","bro good call"]
+            "keywords":["good call"],
+            "needbro": true
         },
         {
             "name":"agree",
-            "keywords":["i agree bro","you're right bro"]
+            "keywords":["i agree","youre right"],
+            "needbro": true
         },
         {
             "name":"flipCoin",
-            "keywords":["bro flip a coin","coin me bro","flip a coin bro","bro coin me"]
+            "keywords":["flip a coin","coin me"],
+            "needbro": true
         },
         {
             "name":"yougood",
-            "keywords":["you good bro","bro you good","you okay bro","bro are you ok","doing good bro"]
+            "keywords":["you good","you okay","you ok","doing good"],
+            "needbro": true
         },
         {
             "name":"itsok",
-            "keywords":["it's ok bro","its ok bro","it's okay bro","its okay bro"]
+            "keywords":["its ok","its okay"],
+            "needbro": true
         },
         {
             "name":"friendChk",
-            "keywords":["who are your real bros","bro check"]
+            "keywords":["bro check"],
+            "needbro": false
         },
         {"name":"vibeCmd",
-        "keywords":["vibe check"]},
+        "keywords":["vibe check"],
+        "needbro": false},
         //"knockKnock":["knock knock"],
         ],
     "silent":{

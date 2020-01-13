@@ -304,14 +304,23 @@ if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<
 //constant replies
 //////////////////////////////////////////////////////////////////
 if(killSwitch == false){
-for(let i=0;i<input.constants.length;i++){
-   for(let j=0;j<input.constants[i].keywords.length;j++){
-     if(msg.content.toLowerCase().includes(input.constants[i].keywords[j])&& killSwitch == false){
-      postMsg(input.constants[i].name,sender,channel)
-      killSwitch = true
-     }
+  let lowerMsg = msg.content.toLowerCase()
+  let cleanMsg = lowerMsg.replace(/[^\w\s]/gi, '')
+  let broDetect = false
+  if(cleanMsg.includes("bro")){
+    broDetect = true
+  }
+  for(let i=0;i<input.constants.length;i++){
+    for(let j=0;j<input.constants[i].keywords.length;j++){
+      if(cleanMsg.includes(input.constants[i].keywords[j])){
+          if(input.constants[i].needbro == false || broDetect == true){
+            postMsg(input.constants[i].name,sender,channel)
+            killSwitch = true
+          }
+      }
     }
-}}
+  }
+}
 
 ///////////////////////////////////////////////////////////////
 //random replies
