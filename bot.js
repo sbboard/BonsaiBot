@@ -312,7 +312,7 @@ if(killSwitch == false){
   }
   for(let i=0;i<input.constants.length;i++){
     for(let j=0;j<input.constants[i].keywords.length;j++){
-      if(cleanMsg.includes(input.constants[i].keywords[j])){
+      if(cleanMsg.includes(input.constants[i].keywords[j])&&killSwitch == false){
           if(input.constants[i].needbro == false || broDetect == true){
             postMsg(input.constants[i].name,sender,channel)
             killSwitch = true

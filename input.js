@@ -27,8 +27,8 @@ const input =  {
         },
         {
             "name":"hello",
-            "keywords":["hello","sup","hey","hi"],
-            "needbro": true
+            "keywords":["hello bro","sup bro","hey bro","hi bro","whats up bro"],
+            "needbro": false
         },
         {
             "name":"love",
