@@ -11,6 +11,11 @@ const input =  {
             "needbro": true
         },
         {
+            "name":"pointCheck",
+            "keywords":["energy check"],
+            "needbro": true
+        },
+        {
             "name":"goodnight",
             "keywords":["goodnight"],
             "needbro": true
@@ -103,7 +108,7 @@ const input =  {
         },
         {"name":"vibeCmd",
         "keywords":["vibe check"],
-        "needbro": false},
+        "needbro": true},
         //"knockKnock":["knock knock"],
         ],
     "silent":{

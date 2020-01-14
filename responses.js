@@ -130,6 +130,12 @@ const respo =  {
         "enemy":["flip off lol","I'M GONNA TAKE THIS COIN... AND SHOVE IT RIGHT DOWN YOUR THROAT BRO. JK THO DON'T BAN ME."],
         "statChange":[]
     },
+    "pointCheck":{
+        "bff":[],
+        "norm":[],
+        "enemy":["you don't deserve any bonsai energy imo","OOOOH THERE BUDDY... OH I GOTTA SAY. OH YOU AIN'T NO BRO O' MINE."],
+        "statChange":[]
+    },
     "youtoobro":{
         "bff":['glad i have a bff like you bro EMOJIHERE','AAAAAAAAAAAAAAAAAAAAAAAH'],
         "norm":['bonsai to that bro EMOJIHERE','AAAAAAAAH AAAAAH AAAAAAAAAH I WANNA STOP THE RAGE BUT I CANNOT!'],

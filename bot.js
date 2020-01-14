@@ -83,6 +83,22 @@ function resetStat(statName){
   changeStatus()
 }
 
+function increasePoint(person,amt){
+  let buddy = bonsaiBot.friends.find(o => o.name == person)
+  buddy.bonsaiPoints += amt
+}
+
+function decreasePoint(person,amt){
+  let buddy = bonsaiBot.friends.find(o => o.name == person)
+  let amt = amt
+  buddy.bonsaiPoints -= amt
+}
+
+function getPoints(person){
+  let buddy = bonsaiBot.friends.find(o => o.name == person)
+  return buddy.bonsaiPoints
+}
+
 function increaseFriend(friend,amt,lastChannel){
   let buddy = bonsaiBot.friends.find(o => o.name == friend)
   let numbro = amt
@@ -187,6 +203,7 @@ client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
   lastPing++
   const channel = client.channels.find('name', msg.channel.name)
   const sender = msg.author.username.toLowerCase()
+  increasePoint(sender,1)
 
 
   //check for emoji
@@ -429,6 +446,24 @@ rage lock: ${rageLock}`
       for(let z=0;z<bonsaiBot.friends.length;z++){
         friendsList += 
 `${bonsaiBot.friends[z].name}: ${bonsaiBot.friends[z].friendLvl}
+`
+      }
+      channel.send(friendsList)
+    }
+  }
+
+  else if(keyword == "pointCheck"){
+    if(relationship == "enemy"){
+      channel.send(respo[keyword][relationship][msgIndex])
+    }
+    else{
+      let friendsList = ``
+      for(let z=0;z<bonsaiBot.friends.length;z++){
+        if(typeof bonsaiBot.friends[z].bonsaiPoints == 'undefined'){
+          bonsaiBot.friends[z].bonsaiPoints = 0
+        }
+        friendsList += 
+`${bonsaiBot.friends[z].name}: ${bonsaiBot.friends[z].bonsaiPoints}
 `
       }
       channel.send(friendsList)
