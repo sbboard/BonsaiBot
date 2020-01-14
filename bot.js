@@ -90,8 +90,14 @@ function increasePoint(person,amt){
 
 function decreasePoint(person,amt){
   let buddy = bonsaiBot.friends.find(o => o.name == person)
-  let amt = amt
-  buddy.bonsaiPoints -= amt
+  console.log(amt)
+  console.log(buddy.bonsaiPoints)
+  if(buddy.bonsaiPoints - amt < 0){
+    buddy.bonsaiPoints = 0
+  }
+  else{
+    buddy.bonsaiPoints = buddy.bonsaiPoints - amt
+  }
 }
 
 function getPoints(person){
@@ -394,8 +400,24 @@ function postMsg(keyword,postSender,channel){
   else{
     msgIndex = bonsaiBot.stats.anger.amt
   }
-
-  if(keyword == "vibeCmd"){
+  //shop check
+  if(keyword == "bonsai"){
+    //cancels out initial increase
+    decreasePoint(postSender,1)
+    saveProg()
+    if(getPoints(postSender) < respo[keyword].energyCost){
+      channel.send(postSender + "... my bro.... you don't have enough bonsai energy to give me your strength. relax my bro")
+    }
+    else{
+      channel.send(respo[keyword][relationship][msgIndex])
+      increaseFriend(postSender,2,channel)
+      decreasePoint(postSender,respo[keyword].energyCost)
+      increaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
+      bonsaicheck(channel)
+    }
+  }
+  else if(keyword == "vibeCmd"){
+    decreasePoint(postSender,1)
     if(relationship == "enemy"){
       channel.send(respo[keyword][relationship][msgIndex])
     }
@@ -403,8 +425,7 @@ function postMsg(keyword,postSender,channel){
       channel.send(
         `anger: ${bonsaiBot.stats.anger.amt}
 faith: ${bonsaiBot.stats.faith.amt}
-bonsai: ${bonsaiBot.stats.bonsai.amt}
-rage lock: ${rageLock}`
+bonsai: ${bonsaiBot.stats.bonsai.amt}`
         )
     }
   }
@@ -438,6 +459,7 @@ rage lock: ${rageLock}`
   }
 
   else if(keyword == "friendChk"){
+    decreasePoint(postSender,1)
     if(relationship == "enemy"){
       channel.send(respo[keyword][relationship][msgIndex])
     }
@@ -453,13 +475,14 @@ rage lock: ${rageLock}`
   }
 
   else if(keyword == "pointCheck"){
+    decreasePoint(postSender,1)
     if(relationship == "enemy"){
       channel.send(respo[keyword][relationship][msgIndex])
     }
     else{
       let friendsList = ``
       for(let z=0;z<bonsaiBot.friends.length;z++){
-        if(typeof bonsaiBot.friends[z].bonsaiPoints == 'undefined'){
+        if(typeof bonsaiBot.friends[z].bonsaiPoints == 'undefined' || bonsaiBot.friends[z].bonsaiPoints < 0 || bonsaiBot.friends[z].bonsaiPoints == null || bonsaiBot.friends[z].bonsaiPoints == "NaN"){
           bonsaiBot.friends[z].bonsaiPoints = 0
         }
         friendsList += 
@@ -511,18 +534,10 @@ rage lock: ${rageLock}`
   }
   //status changes
   if(respo[keyword].statChange.length > 0){
-    if(respo[keyword].statChange[0] == "increase"){
-      increaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
-      bonsaicheck(channel)
-      //check if anger is increased
-      if(respo[keyword].statChange[1] != "bonsai"){
+    if(respo[keyword].statChange[0] == "increase" && respo[keyword].statChange[1] != "bonsai"){
+        increaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
+        bonsaicheck(channel)
         decreaseFriend(postSender,1,channel)
-      }
-      //if it's a bonsai increase by 2
-      else{
-        increaseFriend(postSender,2,channel)
-        saveProg()
-      }
     }
     else if(respo[keyword].statChange[0] == "decrease"){
       if(relationship != "enemy"){

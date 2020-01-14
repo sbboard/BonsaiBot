@@ -54,7 +54,17 @@ const input =  {
         {
             "name":"bonsai",
             "keywords":["bonsai"],
-            "needbro": false
+            "needbro": false,
+        },
+        {
+            "name":"bellyRub",
+            "keywords":["belly rub"],
+            "needbro": true
+        },
+        {
+            "name":"deluxeKiss",
+            "keywords":["deluxe kiss"],
+            "needbro": true
         },
         {
             "name":"thanks",
@@ -74,6 +84,11 @@ const input =  {
         {
             "name":"youtoobro",
             "keywords":["you too"],
+            "needbro": true
+        },
+        {
+            "name":"shopMenu",
+            "keywords":["what should i do with my energy"],
             "needbro": true
         },
         {
@@ -109,13 +124,12 @@ const input =  {
         {"name":"vibeCmd",
         "keywords":["vibe check"],
         "needbro": true},
-        //"knockKnock":["knock knock"],
         ],
     "silent":{
-        "faithPromote":["god","jesus","married","bible","pray","energy","christ","lord","catholic"],
+        "faithPromote":["god","jesus","married","bible","pray","christ","lord","catholic"],
         "sinPromote":["drug","sex","porn","weed","youtube","podcast"],
         "likes":["candy","sandwich","sushi","wrestle","hentai","anime","goku"],
-        "hates":["weapon","worm","police","shame","furr","balls"],
+        "hates":["weapon","worm","police","shame","furr","balls","goth"],
     },
     "random":["lol","bot","bon","bitch","hentai","polycule","lunch","wtf","layabouts"]
 }

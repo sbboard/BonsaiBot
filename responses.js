@@ -61,7 +61,8 @@ const respo =  {
             `NAMEHERECAPS. I SAID TO LEAVE ME ALONE.`,
             `I'M GOING TO SLAUGHTER YOU, NAMEHERECAPS!!`,
         ],
-        "statChange":["increase","bonsai",1]
+        "statChange":["increase","bonsai",1],
+        "energyCost": 3
     },
     "relaxCmd":{
         "bff":[`bro you think i'm mad? i'm not mad! lol EMOJIHERE`,`bro i lost my cool and i have to apologize. always remember who your real friends are EMOJIHERE`],
@@ -110,6 +111,12 @@ const respo =  {
         "bff":[],
         "norm":[],
         "enemy":["like i'd tell you, narc bro","YOU DON'T CARE HOW I FEEL BRO"],
+        "statChange":[]
+    },
+    "shopMenu":{
+        "bff":[],
+        "norm":[],
+        "enemy":["for you bro? nadda!","BRO YOU THINK HAPPINESS CAN BE BOUGHT. YOU ARE A STOOGE!"],
         "statChange":[]
     },
     "itsok":{
