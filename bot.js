@@ -407,7 +407,7 @@ function postMsg(keyword,postSender,channel){
       channel.send(postSender + "... my bro.... you don't have enough bonsai energy to give me your strength. relax my bro")
     }
     else{
-      channel.send(translateMsg(respo[keyword][relationship][msgIndex]))
+      channel.send(translateMsg(respo[keyword][relationship][msgIndex],postSender))
       increaseFriend(postSender,2,channel)
       decreasePoint(postSender,respo[keyword].energyCost)
       increaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
@@ -481,12 +481,13 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
       let friendsList = ``
       for(let z=0;z<bonsaiBot.friends.length;z++){
         if(typeof bonsaiBot.friends[z].bonsaiPoints == 'undefined' || bonsaiBot.friends[z].bonsaiPoints < 0 || bonsaiBot.friends[z].bonsaiPoints == null || bonsaiBot.friends[z].bonsaiPoints == NaN){
-          bonsaiBot.friends[z].bonsaiPoints = 0
+          bonsaiBot.friends[z].bonsaiPoints = 50
         }
         friendsList += 
 `${bonsaiBot.friends[z].name}: ${bonsaiBot.friends[z].bonsaiPoints}
 `
       }
+      saveProg()
       channel.send(friendsList)
     }
   }
