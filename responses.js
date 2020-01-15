@@ -62,7 +62,7 @@ const respo =  {
             `I'M GOING TO SLAUGHTER YOU, NAMEHERECAPS!!`,
         ],
         "statChange":["increase","bonsai",1],
-        "energyCost": 3
+        "energyCost": 10
     },
     "relaxCmd":{
         "bff":[`bro you think i'm mad? i'm not mad! lol EMOJIHERE`,`bro i lost my cool and i have to apologize. always remember who your real friends are EMOJIHERE`],
@@ -290,6 +290,12 @@ const respo =  {
         "bff":[`bro i'm only telling you thus cuz we're close... i'd be weary of those layabouts if i were you lol`,`BRO I'M TOO PISSED TO LAY ABOUT!`],
         "norm":[`layabouts...? where i'm from, those are the cursed people lol EMOJIHERE`,`HOW ABOUT YOU LAY OFF BRO!`],
         "enemy":['hmph... you actually remind me of a layabout, NAMEHERE lol',`LAYABOUTS? HOW COME YOU NEVER ASK ME WHAT I'M MAD ABOUTS?`],
+        "statChange":[]
+    },
+    "twitter":{
+        "bff":[`bro your tweets always really amuse me. you've probably been told this before, but never stop posting EMOJIHERE`,`BRO @ ME NEXT TIME`],
+        "norm":[`bro gotta admit - good tweet`,`HERE'S A TWEET FOR YOU: @NAMEHERECAPS IS A NIMROD`],
+        "enemy":[`bro it's too gosh dang early for these low tier tweets lol`,`GONNA TWEET YOU INTO THE SUN`],
         "statChange":[]
     },
 }
