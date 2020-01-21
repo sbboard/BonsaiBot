@@ -207,7 +207,6 @@ client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
   lastPing++
   const channel = client.channels.find('name', msg.channel.name)
   const sender = msg.author.username.toLowerCase()
-  increasePoint(sender,1)
 
 
   //check for emoji
@@ -229,6 +228,8 @@ client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
     //channel.send(`hey ${sender.toLowerCase()} i'm your bonsai bro lol. say bonsai some time, kay? ${bonsaiBot.emoji}`)
     bonsaiBot.friends.push(newFriend)
   }
+  
+  increasePoint(sender,1)
 ///////////////////////////////////////////////////////////////
 //emoji seek check
 //////////////////////////////////////////////////////////////////

@@ -17,7 +17,7 @@ const input =  {
         },
         {
             "name":"goodnight",
-            "keywords":["goodnight"],
+            "keywords":["goodnight","good night"],
             "needbro": true
         },
         {
