@@ -319,8 +319,8 @@ const respo =  {
     ":hubeye:":{
         "bff":[`bro who is that mysterious person behind that eye emoji? what secrets do they hold lol EMOJIHERE`,`BRO THAT EMOJI IS SPOOKIN' ME RN AND I'M ALREADY PRETTY PISSED`],
         "norm":[`<:hubeye:669029131211767818> :nose: <:hubeye:669029131211767818>
-:black_circle: :lips: :black_circle:`,`<:hubeye:669029131211767818> :nose: <:hubeye:669029131211767818>
-:eggplant: :lips: :black_circle: `],
+:black_circle: :lips: :black_circle: -("bonsai!")`,`<:hubeye:669029131211767818> :nose: <:hubeye:669029131211767818>
+:eggplant: :lips: :black_circle: -("ur dumb")`],
         "enemy":[`if that eye could see NAMEHERE's they probably wish they were blind lol`,`BRO I WOULD ABSOLUTELY LOVE TO STICK MY FINGER RIGHT INTO YOUR EYEBALL`],
         "statChange":[]
     },
