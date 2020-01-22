@@ -301,6 +301,26 @@ const respo =  {
         `bro... wtf is this tweet? honestly`,`bro i'm only saying this bc im concerned... but are you addicted to twitter lol`,`GONNA TWEET YOU INTO THE SUN`],
         "statChange":[]
     },
+    "cancel":{
+        "bff":[`bro these people... they were trying to cancel YOU! i say hey bro... that ain't bonsai. just telling you cuz i care bro.`,`BRO I'M ONE INCH AWAY FROM CANCELLING US!`],
+        "norm":[`you know what should be cancelled? anti-bonsai rhetoric... lol. can i get a bonsai up in here?`,`I WISH I COULD CANCEL MY RAGE! MY ANGER!`],
+        "enemy":['bro i actually heard you were cancelled. how about we get the hashtag going #NAMEHEREiscancelled lol',`BRO YOU CAN TRY TO CANCEL ME BUT I'LL DEFLECT THAT TRASH SO HARD. GONNA DODGE THAT CANCEL LIKE NEO AND THEN KICK YOU IN THE JAW.`],
+        "statChange":[]
+    },
+    ":hubeye:":{
+        "bff":[`bro who is that mysterious person behind that eye emoji? what secrets do they hold lol EMOJIHERE`,`BRO THAT EMOJI IS SPOOKIN' ME RN AND I'M ALREADY PRETTY PISSED`],
+        "norm":[`:hubeye: :nose: :hubeye: 
+        :black_circle: :lips: :black_circle:`,`:hubeye: :nose: :hubeye: 
+        :eggplant: :lips: :black_circle: `],
+        "enemy":[`if that eye could see NAMEHERE's they probably wish they were blind lol`,`BRO I WOULD ABSOLUTELY LOVE TO STICK MY FINGER RIGHT INTO YOUR EYEBALL`],
+        "statChange":[]
+    },
+    "minecraft":{
+        "bff":[`bro you play minecraft? can we share an apartment? that would be sick`,`BRO... I WAS PISSED ALREADY... BUT SOME JIMMY DEAN STOLE ALL MY DIAMONDS ON THE MINECRAFT SERVER`],
+        "norm":[`bro i made a bonsai on the minecraft server last week did you see it?`,`BRO WHEN I FIND OUT ON THE MINECRAFT SERVER... YOU ARE DONEZO.`],
+        "enemy":[`minecraft... isn't that game like... for babies? lol`,`BRO HOW DO I MAKE A GUN IN MINECRAFT JUST TELL ME ALREADY`],
+        "statChange":[]
+    },
 }
 
 module.exports = respo

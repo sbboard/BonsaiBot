@@ -361,7 +361,7 @@ if(killSwitch == false){
 if(killSwitch == false){
   for(let i=0;i<input.random.length;i++){
     if(msg.content.toLowerCase().includes(input.random[i])){
-      if(getRandom(7) == 3){
+      if(getRandom(5) == 3){
         postMsg(input.random[i],sender,channel)
         killSwitch = true
       }
