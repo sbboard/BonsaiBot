@@ -293,8 +293,11 @@ const respo =  {
         "statChange":[]
     },
     "twitter":{
-        "bff":[`bro your tweets always really amuse me. you've probably been told this before, but never stop posting EMOJIHERE`,'aha bro is it tweet time? love your tweets',
-        'bro if i had a twitter i would retweet that so hard lol','bro... solid tweet i must admit EMOJIHERE',`BRO @ ME NEXT TIME`],
+        "bff":[`bro your tweets always really amuse me. you've probably been told this before, but never stop posting EMOJIHERE`,
+        'love this tweet. whenever you post a tweet, i lick my lips and say "oh this is gonna be bonsai" EMOJIHERE',
+        'ring ring, ring ring. hello, this is bonsai bro how can i help you? oh! you have a tweet for me to enjoy? cannot wait EMOJIHERE',
+        'aha bro is it tweet time? love your tweets',
+        `BRO @ ME NEXT TIME`],
         "norm":[`bro gotta admit - good tweet`,'lol i the stuff one finds on twitter.com is absolutely wild',
         'i cannot believe this tweet','it is tweetin time lol',`HERE'S A TWEET FOR YOU: @NAMEHERECAPS IS A NIMROD`],
         "enemy":[`bro it's too gosh dang early for these low tier tweets lol`,`lol bro i'm trying to imagine your twitter feed rn and that must be some wild stuff lol`,
