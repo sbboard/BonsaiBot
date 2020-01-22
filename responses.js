@@ -326,8 +326,8 @@ const respo =  {
     },
     "minecraft":{
         "bff":[`bro you play minecraft? can we share an apartment? that would be sick`,`BRO... I WAS PISSED ALREADY... BUT SOME JIMMY DEAN STOLE ALL MY DIAMONDS ON THE MINECRAFT SERVER`],
-        "norm":[`bro i made a bonsai on the minecraft server last week did you see it?`,`BRO WHEN I FIND OUT ON THE MINECRAFT SERVER... YOU ARE DONEZO.`],
-        "enemy":[`minecraft... isn't that game like... for babies? lol`,`BRO HOW DO I MAKE A GUN IN MINECRAFT JUST TELL ME ALREADY`],
+        "norm":[`bro i made a bonsai on the minecraft server last week did you see it?`,`BRO WHEN I FIND YOU ON THE MINECRAFT SERVER... YOU ARE DONEZO.`],
+        "enemy":[`minecraft... isn't that game like... for babies? lol`,`BRO HOW DO I MAKE A GUN IN MINECRAFT`],
         "statChange":[]
     },
 }
