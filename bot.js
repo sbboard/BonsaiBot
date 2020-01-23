@@ -245,6 +245,16 @@ if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<
   }
 }
 
+//////////////////////
+//spoiler check
+//////////////////////
+if((msg.content.match(/\u007C\u007C/g) || []).length == 2){
+  if(getRandom(10) == 1){
+    let spoilerIsolate = msg.content.split("||")[1]
+    channel.send(`bro... what the heck are you talking about? "${spoilerIsolate}"?? could you help a bro out, PLEASE?`)
+  }
+}
+
 ///////////////////////////////////////////////////////////////
 //silent stat changers
 //////////////////////////////////////////////////////////////////
