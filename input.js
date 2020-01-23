@@ -131,7 +131,7 @@ const input =  {
         "likes":["candy","sandwich","sushi","wrestle","hentai","anime","goku"],
         "hates":["weapon","worm","police","shame","furr","balls","goth"],
     },
-    "random":["lol","bot","bon","bitch","hentai","polycule","lunch","wtf","layabouts","twitter","cancel",":hubeye:","minecraft","sonic"]
+    "random":["lol","bot","bon","bitch","hentai","polycule","lunch","wtf","layabouts","twitter.com","cancel",":hubeye:","minecraft","sonic"]
 }
 
 module.exports = input

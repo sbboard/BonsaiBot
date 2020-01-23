@@ -361,7 +361,11 @@ if(killSwitch == false){
 if(killSwitch == false){
   for(let i=0;i<input.random.length;i++){
     if(msg.content.toLowerCase().includes(input.random[i])){
-      if(getRandom(5) == 3){
+      let random = getRandom(6)
+      if(sender == getEnemy()){
+        random = getRandom(3) 
+      }
+      if(random == 2){
         postMsg(input.random[i],sender,channel)
         killSwitch = true
       }

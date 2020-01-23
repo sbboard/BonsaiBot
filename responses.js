@@ -304,7 +304,7 @@ const respo =  {
         'ring ring, ring ring. hello, this is bonsai bro how can i help you? oh! you have a tweet for me to enjoy? cannot wait EMOJIHERE',
         'aha bro is it tweet time? love your tweets',
         `BRO @ ME NEXT TIME`],
-        "norm":[`bro gotta admit - good tweet`,'lol i the stuff one finds on twitter.com is absolutely wild',
+        "norm":[`bro gotta admit - good tweet`,'lol the stuff one finds on twitter.com is absolutely wild',
         'i cannot believe this tweet','it is tweetin time lol',`HERE'S A TWEET FOR YOU: @NAMEHERECAPS IS A NIMROD`],
         "enemy":[`bro it's too gosh dang early for these low tier tweets lol`,`lol bro i'm trying to imagine your twitter feed rn and that must be some wild stuff lol`,
         `bro... wtf is this tweet? honestly`,`bro i'm only saying this bc im concerned... but are you addicted to twitter lol`,`GONNA TWEET YOU INTO THE SUN`],
