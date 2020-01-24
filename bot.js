@@ -372,7 +372,7 @@ if(killSwitch == false){
   for(let i=0;i<input.random.length;i++){
     if(msg.content.toLowerCase().includes(input.random[i])){
       let random = getRandom(6)
-      if(sender == getEnemy()){
+      if(sender == getEnemy() && random != 2){
         random = getRandom(3) 
       }
       if(random == 2){
@@ -628,10 +628,14 @@ function bonsaicheck(channel){
 }
 
 function translateMsg(msg,postSender){
+  let bonus = ""
+  if(getRandom(50) == 25){
+    bonus = "(bernie voice) "
+  }
   let msg1 = msg.replace("EMOJIHERE",bonsaiBot.emoji)
   let msg2 = msg1.replace("NAMEHERECAPS",postSender.toUpperCase())
   let msg3 = msg2.replace("NAMEHERE",postSender)
-  return msg3
+  return bonus + msg3
 }
 
 client.login(secrets.token);
