@@ -57,16 +57,6 @@ const input =  {
             "needbro": false,
         },
         {
-            "name":"bellyRub",
-            "keywords":["belly rub"],
-            "needbro": true
-        },
-        {
-            "name":"deluxeKiss",
-            "keywords":["deluxe kiss"],
-            "needbro": true
-        },
-        {
             "name":"thanks",
             "keywords":["thanks","thank you"],
             "needbro": true
