@@ -330,6 +330,12 @@ const respo =  {
         "enemy":[`minecraft... isn't that game like... for babies? lol`,`BRO HOW DO I MAKE A GUN IN MINECRAFT`],
         "statChange":[]
     },
+    "whoDied":{
+        "bff":[],
+        "norm":[],
+        "enemy":[],
+        "statChange":[]
+    },
 }
 
 module.exports = respo

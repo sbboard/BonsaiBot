@@ -103,6 +103,13 @@ function getPoints(person){
   return buddy.bonsaiPoints
 }
 
+function someoneDied(person){
+  bonsaiBot.whoDied.push(person)
+  if(bonsaiBot.whoDied.length > 5){
+    bonsaiBot.whoDied.shift()
+  }
+}
+
 function increaseFriend(friend,amt,lastChannel){
   let buddy = bonsaiBot.friends.find(o => o.name == friend)
   let numbro = amt
@@ -248,7 +255,31 @@ if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<
 //////////////////////
 //spoiler check
 //////////////////////
-if((msg.content.match(/\u007C\u007C/g) || []).length == 2){
+if(msg.content.includes('who died')){
+  //
+}
+else if(msg.content.toLowerCase().includes('died')){
+  if(msg.content.toLowerCase().split(' ').indexOf('died')>0){
+    let splitUpMsg = msg.content.toLowerCase().split(' ')
+    let indexOfDeath = splitUpMsg.indexOf('died')
+    channel.send(`bro... ${splitUpMsg[indexOfDeath - 1]} died?? this is so messed up... i can't handle this... i can't cope! this is NOT bonsai!`)
+    someoneDied(splitUpMsg[indexOfDeath - 1])
+  }
+}
+else if(msg.content.toLowerCase().includes('is dead')){
+  let splitUpMsg = msg.content.toLowerCase().split(' ')
+  let theDead = ""
+  for(let i=0;i<splitUpMsg.length;i++){
+    if(splitUpMsg[i] == "is" && splitUpMsg[i+1] == "dead" && i > 0){
+      theDead = splitUpMsg[i-1]
+    }
+  }
+  if(theDead != ""){
+    channel.send(`bro... ${theDead} died?? this is so messed up... i can't handle this... i can't cope! this is NOT bonsai!`)
+    someoneDied(theDead)
+  }
+}
+else if((msg.content.match(/\u007C\u007C/g) || []).length == 2){
   if(getRandom(10) == 1){
     let spoilerIsolate = msg.content.split("||")[1]
     channel.send(`bro... what the heck are you talking about? "${spoilerIsolate}"?? could you help a bro out, PLEASE?`)
@@ -442,7 +473,6 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
         )
     }
   }
-
   else if(keyword == "flipCoin"){
     if(relationship == "enemy"){
       channel.send(respo[keyword][relationship][msgIndex])
@@ -505,6 +535,14 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
       saveProg()
       channel.send(friendsList)
     }
+  }
+  else if(keyword == "whoDied"){
+    channel.send(`it's been... it's been a very sad year for death bro...`)
+    for(let i=0;i<bonsaiBot.whoDied.length;i++){
+      channel.send(`${bonsaiBot.whoDied[i]}...`)
+    }
+    channel.send(`all up in heaven bonsai'ing with the great ape in the sky...`)
+    channel.send(`not a day has gone by i don't think of the bros we lost... BONSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI!`)
   }
   else if(keyword == "sorry"){
     let buddy = bonsaiBot.friends.find(o => o.name == postSender)
