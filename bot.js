@@ -252,9 +252,12 @@ if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<
   }
 }
 
-//////////////////////
-//spoiler check
-//////////////////////
+
+///////////////////////////////////
+// stuff where the msg is returned
+////////////////////////////////////
+
+//death
 if(msg.content.includes('who died')){
   //
 }
@@ -279,6 +282,14 @@ else if(msg.content.toLowerCase().includes('is dead')){
     someoneDied(theDead)
   }
 }
+//food
+else if(msg.content.toLowerCase().includes(' eat ')){
+  let splitUpMsg = msg.content.toLowerCase().split(' ')
+  if(splitUpMsg.indexOf('eat')<splitUpMsg.length -1 && bonsaiBot.food.indexOf(splitUpMsg[splitUpMsg.indexOf('eat')+1]) == -1){
+    bonsaiBot.food.push(splitUpMsg[splitUpMsg.indexOf('eat')+1])
+  }
+}
+//spoilers
 else if((msg.content.match(/\u007C\u007C/g) || []).length == 2){
   if(getRandom(10) == 1){
     let spoilerIsolate = msg.content.split("||")[1]
