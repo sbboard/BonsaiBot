@@ -211,6 +211,8 @@ client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
   let killSwitch = false
   let emojiDetected = false
   let emojiUsed = ""
+  let foodUsed = ""
+  let foodDetected = false
   lastPing++
   const channel = client.channels.find('name', msg.channel.name)
   const sender = msg.author.username.toLowerCase()
@@ -221,6 +223,14 @@ client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
     if(msg.content.includes(emojiList[e].emoji)){
       emojiDetected = true
       emojiUsed = emojiList[e].emoji
+    }
+  }
+
+  //check for food
+  for(let e = 0; e < bonsaiBot.food.length;e++){
+    if(msg.content.includes(bonsaiBot.food[e])){
+      foodDetected = true
+      foodUsed = bonsaiBot.food[e]
     }
   }
 
@@ -256,6 +266,12 @@ if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<
 ///////////////////////////////////
 // stuff where the msg is returned
 ////////////////////////////////////
+if(msg.content.toLowerCase().includes(' eat ')){
+  let splitUpMsg = msg.content.toLowerCase().split(' ')
+  if(splitUpMsg.indexOf('eat')<splitUpMsg.length -1 && bonsaiBot.food.indexOf(splitUpMsg[splitUpMsg.indexOf('eat')+1]) == -1){
+    bonsaiBot.food.push(splitUpMsg[splitUpMsg.indexOf('eat')+1])
+  }
+}
 
 //death
 if(msg.content.includes('who died')){
@@ -283,11 +299,12 @@ else if(msg.content.toLowerCase().includes('is dead')){
   }
 }
 //food
-else if(msg.content.toLowerCase().includes(' eat ')){
-  let splitUpMsg = msg.content.toLowerCase().split(' ')
-  if(splitUpMsg.indexOf('eat')<splitUpMsg.length -1 && bonsaiBot.food.indexOf(splitUpMsg[splitUpMsg.indexOf('eat')+1]) == -1){
-    bonsaiBot.food.push(splitUpMsg[splitUpMsg.indexOf('eat')+1])
-  }
+else if(foodDetected == true &&msg.content.toLowerCase().includes('not food') || msg.content.toLowerCase().includes("isn't food")){
+  channel.send(`wait... you're telling me ${foodUsed} isn't food? this is so messed up bro... i've been snacking on ${foodUsed} all day...`)
+  bonsaiBot.food = bonsaiBot.food.splice(bonsaiBot.food.indexOf(foodDetected),1);
+}
+else if(foodDetected == true && foodUsed != "some"){
+  channel.send(`bro, ${foodUsed}?? you gonna eat that? i'm really hungry i'd love to chow down on some ${foodUsed}!`)
 }
 //spoilers
 else if((msg.content.match(/\u007C\u007C/g) || []).length == 2){
