@@ -10,8 +10,6 @@ var fs = require('fs');
 ///////////////////////////////////////////////////////////////
 //temporary conditions
 //////////////////////////////////////////////////////////////////
-let lastPing = 0
-let lastPinger = ""
 let emojiSeek = true
 let apologyCount = 0
 let rageLock = false
@@ -78,7 +76,7 @@ function resetStat(statName){
     console.log("too mad")
   }
   else{
-    bonsaiBot.stats[statName].amt = bonsaiBot.stats[statName].default
+    bonsaiBot.stats.anger.amt = bonsaiBot.stats.anger.default
   }
   changeStatus()
 }
@@ -479,7 +477,6 @@ function postMsg(keyword,postSender,channel){
   if(keyword == "bonsai"){
     //cancels out initial increase
     decreasePoint(postSender,1)
-    saveProg()
     if(getPoints(postSender) < respo[keyword].energyCost){
       channel.send(postSender + "... my bro.... you don't have enough bonsai energy to give me your strength. relax my bro")
     }
@@ -490,6 +487,7 @@ function postMsg(keyword,postSender,channel){
       increaseStat(respo[keyword].statChange[1],respo[keyword].statChange[2])
       bonsaicheck(channel)
     }
+    saveProg()
   }
   else if(keyword == "vibeCmd"){
     decreasePoint(postSender,1)
