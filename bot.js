@@ -228,7 +228,7 @@ client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
 
   //check for food
   for(let e = 0; e < bonsaiBot.food.length;e++){
-    if(msg.content.includes(bonsaiBot.food[e])){
+    if(msg.content.toLowerCase().includes(bonsaiBot.food[e])){
       foodDetected = true
       foodUsed = bonsaiBot.food[e]
     }
@@ -268,7 +268,8 @@ if(sender == bonsaiBot.currentBF && emojiSeek == true && (msg.content.indexOf("<
 ////////////////////////////////////
 if(msg.content.toLowerCase().includes(' eat ')){
   let splitUpMsg = msg.content.toLowerCase().split(' ')
-  if(splitUpMsg.indexOf('eat')<splitUpMsg.length -1 && bonsaiBot.food.indexOf(splitUpMsg[splitUpMsg.indexOf('eat')+1]) == -1){
+  if(splitUpMsg.indexOf('eat')<splitUpMsg.length -1 && bonsaiBot.food.indexOf(splitUpMsg[splitUpMsg.indexOf('eat')+1]) == -1
+  && splitUpMsg[splitUpMsg.indexOf('eat')+1] != "bonsai" && splitUpMsg[splitUpMsg.indexOf('eat')+1] != "some" && input.random.indexOf(splitUpMsg[splitUpMsg.indexOf('eat')+1])==-1){
     bonsaiBot.food.push(splitUpMsg[splitUpMsg.indexOf('eat')+1])
   }
 }
@@ -299,11 +300,12 @@ else if(msg.content.toLowerCase().includes('is dead')){
   }
 }
 //food
-else if(foodDetected == true &&msg.content.toLowerCase().includes('not food') || msg.content.toLowerCase().includes("isn't food")){
+else if(foodDetected == true && msg.content.toLowerCase().includes(' not food') || msg.content.toLowerCase().includes(" isn't food") || msg.content.toLowerCase().includes(" isnt food")){
   channel.send(`wait... you're telling me ${foodUsed} isn't food? this is so messed up bro... i've been snacking on ${foodUsed} all day...`)
-  bonsaiBot.food = bonsaiBot.food.splice(bonsaiBot.food.indexOf(foodDetected),1);
+  console.log(bonsaiBot.food.indexOf(foodUsed))
+  bonsaiBot.food.splice(bonsaiBot.food.indexOf(foodUsed),1);
 }
-else if(foodDetected == true && foodUsed != "some"){
+else if(foodDetected == true){
   channel.send(`bro, ${foodUsed}?? you gonna eat that? i'm really hungry i'd love to chow down on some ${foodUsed}!`)
 }
 //spoilers
