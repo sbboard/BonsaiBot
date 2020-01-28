@@ -229,6 +229,7 @@ client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
   //check for food
   for(let e = 0; e < bonsaiBot.food.length;e++){
     if(msg.content.toLowerCase().includes(bonsaiBot.food[e])){
+      console.log("detected")
       foodDetected = true
       foodUsed = bonsaiBot.food[e]
     }
@@ -300,9 +301,9 @@ else if(msg.content.toLowerCase().includes('is dead')){
   }
 }
 //food
-else if(foodDetected == true && msg.content.toLowerCase().includes(' not food') || msg.content.toLowerCase().includes(" isn't food") || msg.content.toLowerCase().includes(" isnt food")){
+else if(foodDetected == true && (msg.content.toLowerCase().includes(' not food') || msg.content.toLowerCase().includes(" isn't food") 
+|| msg.content.toLowerCase().includes(" isnt food") || msg.content.toLowerCase().includes(" aren't food") || msg.content.toLowerCase().includes(" arent food"))){
   channel.send(`wait... you're telling me ${foodUsed} isn't food? this is so messed up bro... i've been snacking on ${foodUsed} all day...`)
-  console.log(bonsaiBot.food.indexOf(foodUsed))
   bonsaiBot.food.splice(bonsaiBot.food.indexOf(foodUsed),1);
 }
 else if(foodDetected == true){
