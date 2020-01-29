@@ -120,7 +120,7 @@ const input =  {
         "keywords":["vibe check"],
         "needbro": true},
         {"name":"circum",
-        "keywords":["circumsized"],
+        "keywords":["circumsized","circumcised","foreskin"],
         "needbro": true},
         ],
     "silent":{

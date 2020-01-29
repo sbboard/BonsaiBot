@@ -84,7 +84,7 @@ const respo =  {
     },
     "circum":{
         "bff":["i mean, that's kind of personal but yeah - i am. i'm willing to have it undone tho if that's what you want me to do. anything for you bro, nothing off limits","BRO I'M PISSED AND YOU WANNA TALK PRIVATE PARTS?"],
-        "norm":["real talk, i am proudly circumsized. i dont like to talk religion in here but i'm actual a pretty orthodox jew, so keep that in mind when you discuss my pee pee, kay? EMOJIHERE","BRO... I'M CUT DOWN THERE AND I'LL CUT YOUR FACE TOO"],
+        "norm":["real talk, i am proudly circumcised. i dont like to talk religion in here but i'm actual a pretty orthodox jew, so keep that in mind when you discuss my pee pee, kay? EMOJIHERE","BRO... I'M CUT DOWN THERE AND I'LL CUT YOUR FACE TOO"],
         "enemy":["bro that is off limits to you","BRO YOU AREN'T GETTING ANYWHERE NEAR THIS PEEN"],
         "statChange":[]
     },
