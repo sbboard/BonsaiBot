@@ -211,7 +211,6 @@ client.on('message', msg => {if(msg.author.username != "BonsaiBro"){
   let emojiUsed = ""
   let foodUsed = ""
   let foodDetected = false
-  lastPing++
   const channel = client.channels.find('name', msg.channel.name)
   const sender = msg.author.username.toLowerCase()
 
@@ -451,8 +450,6 @@ if(killSwitch == false){
 function postMsg(keyword,postSender,channel){
   let relationship = ""
   let msgIndex = 0
-  lastPing = 0
-  lastPinger = postSender
   if(postSender == bonsaiBot.currentBF){
     relationship = "bff"
   }

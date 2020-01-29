@@ -120,7 +120,7 @@ const input =  {
         "keywords":["vibe check"],
         "needbro": true},
         {"name":"circum",
-        "keywords":["are you circumsized"],
+        "keywords":["circumsized"],
         "needbro": true},
         ],
     "silent":{
