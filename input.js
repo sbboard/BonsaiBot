@@ -119,6 +119,9 @@ const input =  {
         {"name":"vibeCmd",
         "keywords":["vibe check"],
         "needbro": true},
+        {"name":"circum",
+        "keywords":["are you circumsized"],
+        "needbro": true},
         ],
     "silent":{
         "faithPromote":["god","jesus","married","bible","pray","christ","lord","catholic"],
