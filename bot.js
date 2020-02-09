@@ -430,9 +430,9 @@ if(killSwitch == false){
 if(killSwitch == false){
   for(let i=0;i<input.random.length;i++){
     if(msg.content.toLowerCase().includes(input.random[i])){
-      let random = getRandom(6)
+      let random = getRandom(10)
       if(sender == getEnemy() && random != 2){
-        random = getRandom(3) 
+        random = getRandom(5) 
       }
       if(random == 2){
         postMsg(input.random[i],sender,channel)
