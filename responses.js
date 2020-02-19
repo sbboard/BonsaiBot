@@ -62,7 +62,7 @@ const respo =  {
             `I'M GOING TO SLAUGHTER YOU, NAMEHERECAPS!!`,
         ],
         "statChange":["increase","bonsai",1],
-        "energyCost": 10
+        "energyCost": 20
     },
     "relaxCmd":{
         "bff":[`bro you think i'm mad? i'm not mad! lol EMOJIHERE`,`bro i lost my cool and i have to apologize. always remember who your real friends are EMOJIHERE`],

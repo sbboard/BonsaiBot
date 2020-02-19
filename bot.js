@@ -298,21 +298,21 @@ else if(msg.content.toLowerCase().includes('is dead')){
   }
 }
 //food
-else if(foodDetected == true && (msg.content.toLowerCase().includes(' not food') || msg.content.toLowerCase().includes(" isn't food") 
-|| msg.content.toLowerCase().includes(" isnt food") || msg.content.toLowerCase().includes(" aren't food") || msg.content.toLowerCase().includes(" arent food"))){
-  channel.send(`wait... you're telling me ${foodUsed} isn't food? this is so messed up bro... i've been snacking on ${foodUsed} all day...`)
-  bonsaiBot.food.splice(bonsaiBot.food.indexOf(foodUsed),1);
-}
-else if(foodDetected == true){
-  channel.send(`bro, ${foodUsed}?? you gonna eat that? i'm really hungry i'd love to chow down on some ${foodUsed}!`)
-}
+// else if(foodDetected == true && (msg.content.toLowerCase().includes(' not food') || msg.content.toLowerCase().includes(" isn't food") 
+// || msg.content.toLowerCase().includes(" isnt food") || msg.content.toLowerCase().includes(" aren't food") || msg.content.toLowerCase().includes(" arent food"))){
+//   channel.send(`wait... you're telling me ${foodUsed} isn't food? this is so messed up bro... i've been snacking on ${foodUsed} all day...`)
+//   bonsaiBot.food.splice(bonsaiBot.food.indexOf(foodUsed),1);
+// }
+// else if(foodDetected == true){
+//   channel.send(`bro, ${foodUsed}?? you gonna eat that? i'm really hungry i'd love to chow down on some ${foodUsed}!`)
+// }
 //spoilers
-else if((msg.content.match(/\u007C\u007C/g) || []).length == 2){
-  if(getRandom(10) == 1){
-    let spoilerIsolate = msg.content.split("||")[1]
-    channel.send(`bro... what the heck are you talking about? "${spoilerIsolate}"?? could you help a bro out, PLEASE?`)
-  }
-}
+// else if((msg.content.match(/\u007C\u007C/g) || []).length == 2){
+//   if(getRandom(10) == 1){
+//     let spoilerIsolate = msg.content.split("||")[1]
+//     channel.send(`bro... what the heck are you talking about? "${spoilerIsolate}"?? could you help a bro out, PLEASE?`)
+//   }
+// }
 
 ///////////////////////////////////////////////////////////////
 //silent stat changers
