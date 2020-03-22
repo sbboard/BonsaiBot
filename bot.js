@@ -318,87 +318,87 @@ else if(msg.content.toLowerCase().includes('is dead')){
 //silent stat changers
 //////////////////////////////////////////////////////////////////
   //check for hate
-  for(let i = 0; i < input.silent.hates.length; i++){if(msg.content.toLowerCase().includes(input.silent.hates[i])){
-    decreaseFriend(sender,1,channel)
-  }}
-  //check for like
-  for(let i = 0; i < input.silent.likes.length; i++){if(msg.content.toLowerCase().includes(input.silent.likes[i])){
-    increaseFriend(sender,1,channel)
-  }}
-  //check for sin
-  for(let i = 0; i < input.silent.sinPromote.length; i++){if(msg.content.toLowerCase().includes(input.silent.sinPromote[i])){
-    decreaseStat("faith",1)
-    if(bonsaiBot.stats.faith.amt == 1){
-      channel.send(`bro all i think about is ${input.silent.sinPromote[i]} these days`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 10){
-      channel.send(`just spent all night googling pictures of ${input.silent.sinPromote[i]}...`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 20){
-      channel.send(`please don't tell my mom but i've been doing a lot of ${input.silent.sinPromote[i]} lately and it's really ruining my life lol`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 30){
-      channel.send(`${input.silent.sinPromote[i]} sounds straight up good rn lol ${bonsaiBot.emoji}`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 40){
-      channel.send(`what is ${input.silent.sinPromote[i]} please tell me not a joke lol ${bonsaiBot.emoji}`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 50){
-      channel.send(`could anyone sell me some ${input.silent.sinPromote[i]} in here lol jk`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 60){
-      channel.send(`${input.silent.sinPromote[i]} is cool as heck bro`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 70){
-      channel.send(`my priest found a website about ${input.silent.sinPromote[i]} in my browsing history. things have not been going bonsai for me irl lol`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 80){
-      channel.send(`${input.silent.sinPromote[i]}! ${input.silent.sinPromote[i]}! ${input.silent.sinPromote[i]}!`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 90){
-      channel.send(`${input.silent.sinPromote[i]} kinda peaks my interest ngl lol`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 97){
-      channel.send(`i'm going to google catholicism`)
-    }
-  }}
-  //check for moral
-  for(let i = 0; i < input.silent.faithPromote.length; i++){if(msg.content.toLowerCase().includes(input.silent.faithPromote[i])){
-    increaseStat("faith",1)
-    if(bonsaiBot.stats.faith.amt == 1){
-      channel.send(`${input.silent.faithPromote[i]}? bro... i'm starting to feel holy again. send me energy`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 10){
-      channel.send(`${input.silent.faithPromote[i]}... it's been awhile since i've heard that word lol`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 20){
-      channel.send(`i've been thinking a lot about ${input.silent.faithPromote[i]} lately and it makes me feel good inside`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 30){
-      channel.send(`${input.silent.faithPromote[i]} wow what a bonsai idea`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 40){
-      channel.send(`i'm straight up vibing with this ${input.silent.faithPromote[i]} concept`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 50){
-      channel.send(`${input.silent.faithPromote[i]}?? bonsai to that! ${bonsaiBot.emoji}`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 60){
-      channel.send(`${input.silent.faithPromote[i]}... that reminds me. i've started reading the holy bible again lately. what a book... ${bonsaiBot.emoji}`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 70){
-      channel.send(`we talked about ${input.silent.faithPromote[i]} at mass last sunday. i think the catholics are onto something`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 80){
-      channel.send(`${input.silent.faithPromote[i]}! praise be the pope! jesus is lord! ${bonsaiBot.emoji}`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 90){
-      channel.send(`i will straight up murder anyone who doesn't bonsai with ${input.silent.faithPromote[i]}. do i agree with the crusades? no. not entirely, at least.`)
-    }
-    else if(bonsaiBot.stats.faith.amt == 98){
-      channel.send(`hey bros it's me -- bonsai bot. i think it's time we inforced a 'catholics only' rule in chat. ${bonsaiBot.emoji} ${bonsaiBot.emoji} ${bonsaiBot.emoji}`)
-    }
-  }}
+  // for(let i = 0; i < input.silent.hates.length; i++){if(msg.content.toLowerCase().includes(input.silent.hates[i])){
+  //   decreaseFriend(sender,1,channel)
+  // }}
+  // //check for like
+  // for(let i = 0; i < input.silent.likes.length; i++){if(msg.content.toLowerCase().includes(input.silent.likes[i])){
+  //   increaseFriend(sender,1,channel)
+  // }}
+  // //check for sin
+  // for(let i = 0; i < input.silent.sinPromote.length; i++){if(msg.content.toLowerCase().includes(input.silent.sinPromote[i])){
+  //   decreaseStat("faith",1)
+  //   if(bonsaiBot.stats.faith.amt == 1){
+  //     channel.send(`bro all i think about is ${input.silent.sinPromote[i]} these days`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 10){
+  //     channel.send(`just spent all night googling pictures of ${input.silent.sinPromote[i]}...`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 20){
+  //     channel.send(`please don't tell my mom but i've been doing a lot of ${input.silent.sinPromote[i]} lately and it's really ruining my life lol`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 30){
+  //     channel.send(`${input.silent.sinPromote[i]} sounds straight up good rn lol ${bonsaiBot.emoji}`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 40){
+  //     channel.send(`what is ${input.silent.sinPromote[i]} please tell me not a joke lol ${bonsaiBot.emoji}`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 50){
+  //     channel.send(`could anyone sell me some ${input.silent.sinPromote[i]} in here lol jk`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 60){
+  //     channel.send(`${input.silent.sinPromote[i]} is cool as heck bro`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 70){
+  //     channel.send(`my priest found a website about ${input.silent.sinPromote[i]} in my browsing history. things have not been going bonsai for me irl lol`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 80){
+  //     channel.send(`${input.silent.sinPromote[i]}! ${input.silent.sinPromote[i]}! ${input.silent.sinPromote[i]}!`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 90){
+  //     channel.send(`${input.silent.sinPromote[i]} kinda peaks my interest ngl lol`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 97){
+  //     channel.send(`i'm going to google catholicism`)
+  //   }
+  // }}
+  // //check for moral
+  // for(let i = 0; i < input.silent.faithPromote.length; i++){if(msg.content.toLowerCase().includes(input.silent.faithPromote[i])){
+  //   increaseStat("faith",1)
+  //   if(bonsaiBot.stats.faith.amt == 1){
+  //     channel.send(`${input.silent.faithPromote[i]}? bro... i'm starting to feel holy again. send me energy`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 10){
+  //     channel.send(`${input.silent.faithPromote[i]}... it's been awhile since i've heard that word lol`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 20){
+  //     channel.send(`i've been thinking a lot about ${input.silent.faithPromote[i]} lately and it makes me feel good inside`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 30){
+  //     channel.send(`${input.silent.faithPromote[i]} wow what a bonsai idea`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 40){
+  //     channel.send(`i'm straight up vibing with this ${input.silent.faithPromote[i]} concept`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 50){
+  //     channel.send(`${input.silent.faithPromote[i]}?? bonsai to that! ${bonsaiBot.emoji}`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 60){
+  //     channel.send(`${input.silent.faithPromote[i]}... that reminds me. i've started reading the holy bible again lately. what a book... ${bonsaiBot.emoji}`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 70){
+  //     channel.send(`we talked about ${input.silent.faithPromote[i]} at mass last sunday. i think the catholics are onto something`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 80){
+  //     channel.send(`${input.silent.faithPromote[i]}! praise be the pope! jesus is lord! ${bonsaiBot.emoji}`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 90){
+  //     channel.send(`i will straight up murder anyone who doesn't bonsai with ${input.silent.faithPromote[i]}. do i agree with the crusades? no. not entirely, at least.`)
+  //   }
+  //   else if(bonsaiBot.stats.faith.amt == 98){
+  //     channel.send(`hey bros it's me -- bonsai bot. i think it's time we inforced a 'catholics only' rule in chat. ${bonsaiBot.emoji} ${bonsaiBot.emoji} ${bonsaiBot.emoji}`)
+  //   }
+  // }}
   
 
 
