@@ -279,22 +279,24 @@ if(msg.content.includes('who died')){
 else if(msg.content.toLowerCase().includes('died')){
   if(msg.content.toLowerCase().split(' ').indexOf('died')>0){
     let splitUpMsg = msg.content.toLowerCase().split(' ')
+    let splitNoLower = msg.content.split(' ')
     let indexOfDeath = splitUpMsg.indexOf('died')
-    channel.send(`bro... ${splitUpMsg[indexOfDeath - 1]} died?? this is so messed up... i can't handle this... i can't cope! this is NOT bonsai!`)
-    someoneDied(splitUpMsg[indexOfDeath - 1])
-  }
-}
-else if(msg.content.toLowerCase().includes('is dead')){
-  let splitUpMsg = msg.content.toLowerCase().split(' ')
-  let theDead = ""
-  for(let i=0;i<splitUpMsg.length;i++){
-    if(splitUpMsg[i] == "is" && splitUpMsg[i+1] == "dead" && i > 0){
-      theDead = splitUpMsg[i-1]
+    let deadOne = ""
+    if(splitNoLower[indexOfDeath - 1][0] == splitNoLower[indexOfDeath - 1][0].toUpperCase()){
+      for(let i = indexOfDeath - 1; i >= 0; i--){
+        if(splitNoLower[i][0] == splitNoLower[i][0].toUpperCase()){
+          deadOne = splitUpMsg[i] + " " + deadOne
+        }
+        else{
+          break;
+        }
+      }
     }
-  }
-  if(theDead != ""){
-    channel.send(`bro... ${theDead} died?? this is so messed up... i can't handle this... i can't cope! this is NOT bonsai!`)
-    someoneDied(theDead)
+    if(deadOne != ""){
+      deadOne = deadOne.slice(0, deadOne.length-1)
+      channel.send(`bro... ${deadOne} died?? this is so messed up... i can't handle this... i can't cope! this is NOT bonsai!`)
+      someoneDied(deadOne)
+    }
   }
 }
 //food
