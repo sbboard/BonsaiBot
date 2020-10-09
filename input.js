@@ -107,6 +107,11 @@ const input =  {
             "needbro": true
         },
         {
+            "name":"whatswrong",
+            "keywords":["whats wrong"],
+            "needbro": true
+        },
+        {
             "name":"whoDied",
             "keywords":["who died"],
             "needbro": true

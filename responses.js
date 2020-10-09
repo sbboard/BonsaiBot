@@ -149,6 +149,12 @@ const respo =  {
         "enemy":["you don't deserve any bonsai energy imo","OOOOH THERE BUDDY... OH I GOTTA SAY. OH YOU AIN'T NO BRO O' MINE."],
         "statChange":[]
     },
+    "whatswrong":{        
+        "bff":['when your in my life? bro, absolutely nothing EMOJIHERE','I JUST DONT FEEL SO GOOD IS THE THING'],
+        "norm":['nothings wrong bro. just bonsai as ever EMOJIHERE','GET AWAY FROM ME YOU CADBURY EGG'],
+        "enemy":["you're what's wrong","i'm feelin like a rage comic rn..."],
+        "statChange":[]
+    },
     "youtoobro":{
         "bff":['glad i have a bff like you bro EMOJIHERE','AAAAAAAAAAAAAAAAAAAAAAAH'],
         "norm":['bonsai to that bro EMOJIHERE','AAAAAAAAH AAAAAH AAAAAAAAAH I WANNA STOP THE RAGE BUT I CANNOT!'],
