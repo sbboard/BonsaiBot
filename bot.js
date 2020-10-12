@@ -538,7 +538,7 @@ bonsai: ${bonsaiBot.stats.bonsai.amt}`
 }
 
 function bonsaicheck(channel){
-  if(bonsaiBot.stats.bonsai.amt == 3000){
+  if(bonsaiBot.stats.bonsai.amt == 500){
     channel.send("BONSAI")
     channel.send("THROUGH")
     channel.send("MY")
@@ -556,7 +556,7 @@ function bonsaicheck(channel){
     channel.send("I am.... both metaphorically and physically... reborn" + bonsaiBot.emoji)
     bonsaiBot.stats.bonsai.amt = 0
   }
-  else if(bonsaiBot.stats.bonsai.amt == 1500){
+  else if(bonsaiBot.stats.bonsai.amt == 450){
     channel.send("AAAAAH!!!")
     channel.send("I'M")
     channel.send("GOING")
@@ -566,7 +566,7 @@ function bonsaicheck(channel){
     channel.send("DOUBLE")
     channel.send("BONSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIII", {files: ["./modes/sayan4.png"]})
   }
-  else if(bonsaiBot.stats.bonsai.amt == 1000){
+  else if(bonsaiBot.stats.bonsai.amt == 400){
     channel.send("I'M")
     channel.send("GOING")
     channel.send("SUPER")
@@ -574,7 +574,7 @@ function bonsaicheck(channel){
     channel.send("MEGA")
     channel.send("BONSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIIIIII", {files: ["./modes/sayan3.png"]})
   }
-  else if(bonsaiBot.stats.bonsai.amt == 500){
+  else if(bonsaiBot.stats.bonsai.amt == 350){
     channel.send("IT'S")
     channel.send("TIME")
     channel.send("FOR")
